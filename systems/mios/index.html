@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIOS Elite V — Trouvus</title>
+<meta name="description" content="A deterministic market decision system. Verified data in, a disciplined action label out, and a refusal when the data cannot be verified. Not a trading bot.">
+<link rel="canonical" href="https://www.trouvus.com/systems/mios">
+<meta property="og:title" content="MIOS Elite V — a deterministic market decision system">
+<meta property="og:description" content="A deterministic market decision system. Verified data in, a disciplined action label out, and a refusal when the data cannot be verified. Not a trading bot.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trouvus.com/systems/mios">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="glyph"></span>Trouvus</a>
+    <div class="navlinks">
+      <a href="/systems">Systems</a>
+      <a href="/architecture">Architecture</a>
+      <a href="/baseline">Baseline</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/about">About</a>
+      <a class="cta" href="/contact">Request a briefing</a>
+    </div>
+  </div>
+</nav>
+<div class="subnav">
+  <ul>
+    <li><a href="/systems">Systems</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/baseline">Baseline</a></li>
+    <li><a href="/evidence">Evidence</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<header class="pagehead" id="main">
+  <div class="wrap">
+    <div class="kicker">Systems · Markets</div>
+    <h1>MIOS Elite V</h1>
+    <p class="lead">A deterministic market decision system. Verified market data in; disciplined regime, trigger, risk and action output out — and a refusal when the data cannot be verified.</p>
+    <p><span class="status live" style="margin-top:22px;">Operating</span></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">What it is not</div>
+      <h2>Not a trading bot. Not a recommendation engine.</h2>
+    </div>
+    <div class="prose">
+      <p>Both of those exist, both are easier to build, and both fail in the same way: the output is a confident sentence whose derivation nobody can reconstruct.</p>
+      <p>MIOS is a <strong>doctrine-constrained command system</strong>. Doctrine — the rules governing regime, trigger and risk — is set before the run and is not renegotiated during it. The engine applies it. Language models sit alongside the chain to explain, summarise, audit and argue with the result. They are not permitted to produce the final label.</p>
+      <p><strong>Autonomous order execution is explicitly out of scope.</strong> The chain ends at a human, by design and not by omission. A system that both decides and acts removes the one checkpoint that makes the decision defensible.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Behaviour</div>
+    <h2>What it emits, and what it refuses.</h2>
+    <div class="prose" style="margin-bottom:30px;">
+      <p>The action-label set is closed. Eight labels are answers; the ninth is a refusal. Adding one requires a schema change, a contract test and a rendering test — it cannot happen at runtime.<sup class="src"><a href="#s1">1</a></sup></p>
+    </div>
+    <div class="tablewrap">
+      <table class="spec">
+        <thead><tr><th scope="col">Condition</th><th scope="col">What the system does</th></tr></thead>
+        <tbody>
+          <tr><td>Price verified, doctrine satisfied</td><td>Emits one of eight action labels, with the run record behind it.</td></tr>
+          <tr><td>Price cannot be verified</td><td>Emits <strong>BLOCKED</strong>. No buy zone, stop, target, score or tier may be shown as authoritative beside it.</td></tr>
+          <tr><td>Mock or fallback data in the run</td><td>Marked visibly as unverified. Cannot produce an actionable label at all.</td></tr>
+          <tr><td>Risk check fails</td><td>The action is downgraded or blocked. Never silently widened.</td></tr>
+          <tr><td>No label fits the engine output</td><td>Emits <strong>BLOCKED</strong> rather than approximating to the nearest label.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="caveat">
+      <strong>The refusal is the feature.</strong> Eight of nine labels are the easy part; every system has those. A system that cannot say <em>I do not know</em> will instead say something plausible, and plausible output is the kind that gets acted on before anyone checks.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Build</div>
+    <h2>What it runs on.</h2>
+    <div class="tablewrap">
+      <table class="spec">
+        <thead><tr><th scope="col">Layer</th><th scope="col">Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Application</td><td>FastAPI backend, Next.js front end</td></tr>
+          <tr><td>Data</td><td>PostgreSQL, Redis</td></tr>
+          <tr><td>Identity</td><td>OIDC via Keycloak</td></tr>
+          <tr><td>Accountability</td><td>Audit trail, run cards, full trace replay</td></tr>
+          <tr><td>Output</td><td>Closed action-label set, nine values, refusal included</td></tr>
+          <tr><td>Order execution</td><td>Out of scope — the chain ends at a named human</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="prose" style="margin-top:30px;">
+      <p>Trace replay is the part worth pressing us on. Every emitted label can be reconstructed from the run record: what was retrieved, what passed each gate, and which rule produced the verdict. That is what makes an answer auditable rather than merely confident.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Standing statement</div>
+      <h2>Decision support, not advice.</h2>
+    </div>
+    <div class="prose">
+      <p><strong>MIOS produces decision support. It does not place orders and does not constitute financial advice.</strong></p>
+      <p>We publish no performance figures, returns, backtest results or user counts, and we will not produce them on request. A number without a reproducible derivation is exactly the kind of claim the rest of this site argues against, and we are not going to make an exception for our own product.</p>
+      <p><!-- TODO(mitt): open item 2 — is MIOS sold to external customers, or is the revenue from your own use? That decides whether this page carries pricing. Legal review of the "not financial advice" language required before launch. --></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Next</div>
+      <h2>See the chain it runs on.</h2>
+    </div>
+    <div>
+      <div class="prose" style="margin-bottom:26px;">
+        <p>Every stage, what it emits, and what it does on failure — including the two gates that can stop the run.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/architecture">The decision chain</a>
+        <a class="btn ghost" href="/contact">Request a briefing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ol>
+      <li id="s1">Internal MIOS doctrine and output schema. The label set and its refusal state are contract-tested; no external link applies.</li>
+    </ol>
+  </div>
+</div>
+<footer>
+  <div class="wrap footgrid">
+    <div class="meta">
+      <strong style="font-family:Archivo,sans-serif;font-size:15px;color:var(--ink);">Trouvus</strong><br>
+      Deterministic AI systems<br>
+      Toronto, Canada
+    </div>
+    <div class="meta">
+      <a href="/systems">Systems</a><br>
+      <a href="/systems/mios">MIOS Elite V</a><br>
+      <a href="/systems/regulated-practice">Regulated practice</a>
+    </div>
+    <div class="meta">
+      <a href="/architecture">Architecture</a><br>
+      <a href="/baseline">Baseline</a><br>
+      <a href="/evidence">Evidence</a>
+    </div>
+    <div class="meta">
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a><br>
+      <a href="mailto:info@trouvus.com">info@trouvus.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

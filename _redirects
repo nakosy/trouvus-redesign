@@ -23,3 +23,6 @@
 
 # Catch-all must stay last.
 /*                              /                         301
+
+# All nine pages of the inventory now exist, so the catch-all only fires on
+# genuinely unknown URLs. Netlify applies redirects last, after static files.

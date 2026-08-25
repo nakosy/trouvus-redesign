@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulated practice — Trouvus</title>
+<meta name="description" content="Knowledge Vault and Workflow Engine: on-premises retrieval and drafting where privileged material never leaves the practice. Available for funded pilot; no client deployments to date.">
+<link rel="canonical" href="https://www.trouvus.com/systems/regulated-practice">
+<meta property="og:title" content="Knowledge Vault & Workflow Engine — architecture and an offer">
+<meta property="og:description" content="Knowledge Vault and Workflow Engine: on-premises retrieval and drafting where privileged material never leaves the practice. Available for funded pilot; no client deployments to date.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trouvus.com/systems/regulated-practice">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="glyph"></span>Trouvus</a>
+    <div class="navlinks">
+      <a href="/systems">Systems</a>
+      <a href="/architecture">Architecture</a>
+      <a href="/baseline">Baseline</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/about">About</a>
+      <a class="cta" href="/contact">Request a briefing</a>
+    </div>
+  </div>
+</nav>
+<div class="subnav">
+  <ul>
+    <li><a href="/systems">Systems</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/baseline">Baseline</a></li>
+    <li><a href="/evidence">Evidence</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<header class="pagehead" id="main">
+  <div class="wrap">
+    <div class="kicker">Systems · Regulated practice</div>
+    <h1>Knowledge Vault &amp; Workflow Engine</h1>
+    <p class="lead">Retrieval and drafting for professions that cannot let privileged material leave their custody — where every generated assertion links to a source document the practitioner already holds.</p>
+    <p><span class="status pilot" style="margin-top:22px;">Available for funded pilot · no client deployments to date</span></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Status, stated plainly</div>
+      <h2>This is architecture and an offer, not a track record.</h2>
+    </div>
+    <div class="prose">
+      <p>No client deployment of this system exists. We are describing what we have designed and what we will build under a funded pilot, and we would rather say so than imply a case study we do not have.</p>
+      <p>Offering the pilot openly is the stronger position anyway. A firm that shows you an anonymised success story is asking you to trust a claim you cannot check. A firm that tells you it has not shipped this yet is telling you something verifiable — and everything below is a commitment you can hold it to.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The custody problem</div>
+    <h2>The speed is not the hard part.</h2>
+    <div class="prose">
+      <p>Retrieval and drafting over a professional's own corpus is not technically difficult any more. What stops regulated practices adopting it is that the useful version requires privileged material to leave their custody — to a vendor, a model provider, or a jurisdiction whose rules they cannot answer for.</p>
+      <p>So the design constraint is not capability. It is that <strong>nothing leaves.</strong></p>
+    </div>
+    <div class="tablewrap">
+      <table class="spec">
+        <thead><tr><th scope="col">Property</th><th scope="col">Commitment</th></tr></thead>
+        <tbody>
+          <tr><td>Deployment</td><td>The client's own hardware, or a single-tenant instance in a jurisdiction the client chooses.</td></tr>
+          <tr><td>Egress</td><td>No client data reaches Trouvus or any model provider.</td></tr>
+          <tr><td>Provenance</td><td>Every generated assertion links to an authenticated source document.</td></tr>
+          <tr><td>Confidence</td><td>Each output carries a confidence score, with the mandatory-review threshold set before deployment rather than negotiated during it.</td></tr>
+          <tr><td>Sign-off</td><td>A named practitioner must sign off before use. Not advisory.</td></tr>
+          <tr><td>Language</td><td>Built for bilingual, multi-script practice.</td></tr>
+          <tr><td>Exit</td><td>Client data and indexes remain client property and are exportable on exit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="caveat">
+      <strong>The exit clause is deliberate.</strong> A knowledge system that cannot be taken away from its vendor is not an asset, it is a dependency. Ask every supplier in this category what happens to your indexes when you leave, and compare the answers.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Before a pilot</div>
+      <h2>Five questions your regulator will ask.</h2>
+    </div>
+    <div class="prose">
+      <p>The Octopus Protocol is general. Applying it inside a regulated profession requires an annex answering five questions in that profession's own terms.<sup class="src"><a href="#s1">1</a></sup> We answer them with you before anything is built, because the answers change the system rather than describe it.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="missing">
+      <li><span class="mn">01</span><span>What counts as an <b>authenticated source</b> in this practice?</span></li>
+      <li><span class="mn">02</span><span>Who may hold <b>accountability</b> for an agent's output — and does professional regulation restrict that to particular licence-holders?</span></li>
+      <li><span class="mn">03</span><span>What must the <b>audit record</b> contain to satisfy this profession's regulator?</span></li>
+      <li><span class="mn">04</span><span>Where may data <b>reside</b>, and under whose custody, given the confidentiality obligations that apply?</span></li>
+      <li><span class="mn">05</span><span>At what <b>confidence threshold</b> does human review become mandatory rather than advisory?</span></li>
+    </ul>
+    <div class="prose" style="margin-top:30px;">
+      <p>A profession that has answered these five has a standard. Any vendor able to satisfy the answers meets it — including one that is not us. That is what makes it a standard rather than a sales sheet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">What a funded pilot is</div>
+      <h2>Bounded, measured, and yours at the end.</h2>
+    </div>
+    <div>
+      <div class="prose" style="margin-bottom:26px;">
+        <p>One practice area, one corpus, a defined stop condition and a named practitioner answerable for sign-off. It begins the way every engagement begins — by measuring how the work is done now.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/contact">Discuss a pilot</a>
+        <a class="btn ghost" href="/baseline">The 30-day baseline</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ol>
+      <li id="s1">Kabir, M. N. <cite>The Octopus Protocol: Governance Principles for Multi-Agent Systems.</cite> CCAIE Foundation Framework Document v0.1, 2026, §5. <!-- TODO(mitt): stable framework URL --></li>
+    </ol>
+  </div>
+</div>
+<footer>
+  <div class="wrap footgrid">
+    <div class="meta">
+      <strong style="font-family:Archivo,sans-serif;font-size:15px;color:var(--ink);">Trouvus</strong><br>
+      Deterministic AI systems<br>
+      Toronto, Canada
+    </div>
+    <div class="meta">
+      <a href="/systems">Systems</a><br>
+      <a href="/systems/mios">MIOS Elite V</a><br>
+      <a href="/systems/regulated-practice">Regulated practice</a>
+    </div>
+    <div class="meta">
+      <a href="/architecture">Architecture</a><br>
+      <a href="/baseline">Baseline</a><br>
+      <a href="/evidence">Evidence</a>
+    </div>
+    <div class="meta">
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a><br>
+      <a href="mailto:info@trouvus.com">info@trouvus.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

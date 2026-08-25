@@ -4,9 +4,15 @@ Hand-authored HTML. No framework, no build step, no dependencies.
 
 ## Layout
 
-    index.html                homepage
-    architecture/index.html   → /architecture
-    baseline/index.html       → /baseline
+    index.html                            → /
+    systems/index.html                    → /systems
+    systems/mios/index.html               → /systems/mios
+    systems/regulated-practice/index.html → /systems/regulated-practice
+    architecture/index.html               → /architecture
+    baseline/index.html                   → /baseline
+    evidence/index.html                   → /evidence
+    about/index.html                      → /about
+    contact/index.html                    → /contact
     styles.css                the whole design system
     script.js                 all page interaction
     netlify.toml              publish config, security headers, CSP
@@ -14,10 +20,12 @@ Hand-authored HTML. No framework, no build step, no dependencies.
     README.md                 this file
 
 Pages are directory-index files so URLs stay clean without relying on
-Netlify's Pretty URLs toggle. Remaining pages follow the same shape:
+Netlify's Pretty URLs toggle.
 
-    systems/index.html        → /systems
-    systems/mios/index.html   → /systems/mios
+Nav and footer are duplicated across all nine pages — the cost of the no-build
+constraint. Change one, change all nine; there is a matching block in each file
+between `<div class="navlinks">` and its closing tag, and between `<footer>`
+and `</footer>`.
 
 **`/baseline` is an addition to the change order's §4 inventory.** The 30-day
 baseline sprint was previously only a CTA band on the homepage; it is the entry
@@ -66,16 +74,42 @@ new marks.
 
 `prefers-reduced-motion: reduce` renders every final state without animating.
 
+## The contact form
+
+`/contact` posts to Netlify Forms: `data-netlify="true"` plus the hidden
+`form-name` input, with `company-website` as the honeypot. It submits without
+JavaScript. Enable form detection in the Netlify UI on first deploy, and set a
+notification address, or submissions land in the dashboard and nowhere else.
+The optional **role** field exists to answer a real question with evidence —
+who actually lands on which page — rather than deciding it in a meeting.
+
+## Before launch
+
+- [ ] Enable Netlify Forms and set the notification address
+- [ ] **Export every DNS record before repointing nameservers** — MX, SPF,
+      DKIM, DMARC and verification TXT. If `info@trouvus.com` is provisioned
+      through Wix, moving DNS breaks mail. This is the step that goes wrong.
+- [ ] Keep the Wix site live in parallel until the new one is verified
+- [ ] Crawl the Wix sitemap and complete `_redirects` — once Wix is off you
+      cannot enumerate the indexed URLs
+- [ ] Legal review of the MIOS "not financial advice" language
+- [ ] Resolve every `TODO(mitt):` below
+
 ## Open items
 
 Search the source for `TODO(mitt):`. Current list:
 
-1. Octopus Protocol needs a stable public URL before `/architecture` can link.
+1. Octopus Protocol needs a stable public URL before `/architecture` and
+   `/systems/regulated-practice` can link to it.
 2. TAKE 2026 keynote needs a slides or abstract link.
 3. Case study link for the industrial-holding programme.
-4. Confirm phone and email — both carried over from the Wix site, unverified.
+4. Confirm phone and address — carried over from the Wix site, unverified.
 5. Audit the Wix sitemap and complete `_redirects` before the DNS switch.
 6. Decide the fate of the July 2024 blog post.
+7. Canonical institutional affiliation for the principal — public sources are
+   inconsistent (`/about`). Pick one form and correct it everywhere.
+8. Is MIOS sold externally, or is the revenue from own use? Decides whether
+   `/systems/mios` carries pricing.
 
 ## Claims discipline
 

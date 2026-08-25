@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Systems — Trouvus</title>
+<meta name="description" content="Two systems, the platform layers they are assembled from, and one clearly labelled roadmap item that is not available.">
+<link rel="canonical" href="https://www.trouvus.com/systems">
+<meta property="og:title" content="Systems — one architecture, and what it is assembled from">
+<meta property="og:description" content="Two systems, the platform layers they are assembled from, and one clearly labelled roadmap item that is not available.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trouvus.com/systems">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="glyph"></span>Trouvus</a>
+    <div class="navlinks">
+      <a href="/systems">Systems</a>
+      <a href="/architecture">Architecture</a>
+      <a href="/baseline">Baseline</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/about">About</a>
+      <a class="cta" href="/contact">Request a briefing</a>
+    </div>
+  </div>
+</nav>
+<div class="subnav">
+  <ul>
+    <li><a href="/systems">Systems</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/baseline">Baseline</a></li>
+    <li><a href="/evidence">Evidence</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<header class="pagehead" id="main">
+  <div class="wrap">
+    <div class="kicker">Systems</div>
+    <h1>One architecture, and what it is assembled from.</h1>
+    <p class="lead">Two systems, a set of platform layers they are built on, and one thing still in design. Each carries a status line, because the difference between operating, available for pilot, and not yet built is the difference a buyer most needs and is least often told.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Systems</div>
+    <h2>What exists today.</h2>
+    <div class="systems">
+      <div class="sys">
+        <div>
+          <div class="tagline">Markets</div>
+          <h3><a href="/systems/mios" style="text-decoration:none;border-bottom:1px solid var(--rule);">MIOS Elite V</a></h3>
+          <p>A deterministic market decision system. Verified market data in; disciplined regime, trigger, risk and action output out. Not an agentic trading bot and not a narrative recommendation engine — a doctrine-constrained command system with an audit trail, run cards and trace replay.</p>
+          <p class="gain"><b>What this buys you:</b> a decision you can defend after the fact, because every label replays back to the data that produced it.</p>
+          <p><span class="status live">Operating</span></p>
+        </div>
+        <ul class="speclist">
+          <li><span>Stack</span><span>FastAPI · Next.js</span></li>
+          <li><span>Identity</span><span>OIDC / Keycloak</span></li>
+          <li><span>Execution</span><span>Out of scope</span></li>
+          <li><span>Replay</span><span>Full trace</span></li>
+        </ul>
+      </div>
+
+      <div class="sys">
+        <div>
+          <div class="tagline">Regulated practice</div>
+          <h3><a href="/systems/regulated-practice" style="text-decoration:none;border-bottom:1px solid var(--rule);">Knowledge Vault &amp; Workflow Engine</a></h3>
+          <p>Retrieval and drafting for professions that cannot let privileged material leave their custody. On the client's own hardware, or a single-tenant instance in a chosen jurisdiction. Every generated assertion links to an authenticated source document; sign-off by a named practitioner is mandatory.</p>
+          <p class="gain"><b>What this buys you:</b> the drafting speed without the custody problem.</p>
+          <p><span class="status pilot">Available for funded pilot · no client deployments to date</span></p>
+        </div>
+        <ul class="speclist">
+          <li><span>Deployment</span><span>On-prem / single-tenant</span></li>
+          <li><span>Egress</span><span>None (on-prem)</span></li>
+          <li><span>Provenance</span><span>Per assertion</span></li>
+          <li><span>Sign-off</span><span>Mandatory</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Platform layers</div>
+    <h2>The components our systems are assembled from.</h2>
+    <div class="prose" style="margin-bottom:30px;">
+      <p>These are not products and are not sold separately. They are listed because a buyer evaluating a small firm is entitled to know whether the depth is real or whether each engagement starts from nothing.</p>
+    </div>
+    <ul class="layers">
+      <li><span class="lname">Async tool-calling engine</span><span class="ldesc">Concurrent tool execution with per-call timeouts, retries and structured failure — so a stalled dependency degrades one branch rather than the run.</span></li>
+      <li><span class="lname">Deterministic retrieval and orchestration</span><span class="ldesc">Retrieval whose result set is reproducible from the run record, and orchestration whose control flow is code rather than model discretion.</span></li>
+      <li><span class="lname">Multi-agent workgroup environment</span><span class="ldesc">Specialised agents working under one orchestrator, with the boundary at which each may act declared before the run.</span></li>
+      <li><span class="lname">Model routing</span><span class="ldesc">Task-appropriate model selection, so the expensive model is used where judgement is needed and nowhere else.</span></li>
+      <li><span class="lname">CLI orchestration</span><span class="ldesc">Every pipeline runnable head-less and reproducibly, which is what makes trace replay possible at all.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Internal tooling</div>
+    <h2>The agent estate.</h2>
+    <div class="prose" style="margin-bottom:20px;">
+      <p>Specialised, versioned agent directives in production across research synthesis, course architecture, patent prosecution, financial analysis, technical illustration and editorial work. We do not publish a count, because anyone can claim one. Three specifics are more useful:</p>
+    </div>
+    <ul class="missing">
+      <li><span class="mn">01</span><span><b>An epistemic control agent</b> whose only function is to stop vague, unfalsifiable or overreaching claims reaching a final output.</span></li>
+      <li><span class="mn">02</span><span><b>Adversarial reviewer agents</b> that argue against a conclusion before it ships, rather than checking it after.</span></li>
+      <li><span class="mn">03</span><span><b>A closed output vocabulary</b> wherever a system emits a verdict — including a refusal state, so "cannot answer" is a first-class result rather than a silent gap.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Roadmap</div>
+    <h2>In design. Not available.</h2>
+    <div class="roadmap">
+      <span class="flag">IN DESIGN — NOT AVAILABLE, NOT FOR SALE</span>
+      <h3>CRA-Agent OS</h3>
+      <p>A vertical system for Canadian Taxpayer Relief and Voluntary Disclosures applications: precedent-grounded, with every assertion linked to an authenticated source and mandatory practitioner sign-off before filing. It is described here because we would rather publish a roadmap than imply a catalogue. There is nothing to buy, no pilot to join, and no date.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Where engagements start</div>
+      <h2>None of it works on an unmeasured process.</h2>
+    </div>
+    <div>
+      <div class="prose" style="margin-bottom:26px;">
+        <p>Whichever system fits, the first engagement is the same one: thirty days, one process, measured rather than estimated.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/baseline">The 30-day baseline</a>
+        <a class="btn ghost" href="/architecture">How the systems are built</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap footgrid">
+    <div class="meta">
+      <strong style="font-family:Archivo,sans-serif;font-size:15px;color:var(--ink);">Trouvus</strong><br>
+      Deterministic AI systems<br>
+      Toronto, Canada
+    </div>
+    <div class="meta">
+      <a href="/systems">Systems</a><br>
+      <a href="/systems/mios">MIOS Elite V</a><br>
+      <a href="/systems/regulated-practice">Regulated practice</a>
+    </div>
+    <div class="meta">
+      <a href="/architecture">Architecture</a><br>
+      <a href="/baseline">Baseline</a><br>
+      <a href="/evidence">Evidence</a>
+    </div>
+    <div class="meta">
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a><br>
+      <a href="mailto:info@trouvus.com">info@trouvus.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

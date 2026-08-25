@@ -397,3 +397,56 @@ svg.dgm{display:block;height:auto;}
   .sprint{grid-template-columns:1fr;}
   .pagehead{padding:44px 0 40px;}
 }
+
+/* ---------- platform layers ---------- */
+.layers{margin:8px 0 0;padding:0;list-style:none;border-top:1px solid var(--hair);}
+.layers li{padding:16px 0;border-bottom:1px solid var(--hair);display:grid;
+  grid-template-columns:250px 1fr;gap:8px 26px;align-items:baseline;}
+.layers .lname{font-size:15.5px;font-weight:600;color:var(--ink);}
+.layers .ldesc{font-size:14.6px;color:var(--ink-2);}
+
+/* ---------- roadmap ---------- */
+.roadmap{border:1px dashed var(--rule);background:transparent;padding:26px 26px 28px;margin-top:8px;}
+.roadmap .flag{display:inline-block;font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:10.5px;letter-spacing:.12em;padding:6px 11px;border:1px solid var(--muted);
+  color:var(--muted);border-radius:2px;margin-bottom:18px;}
+.roadmap h3{margin-top:0;}
+.roadmap p{margin:0;font-size:15px;color:var(--ink-2);max-width:64ch;}
+
+/* ---------- spec table ---------- */
+.tablewrap{overflow-x:auto;margin-top:8px;border:1px solid var(--rule);}
+table.spec{border-collapse:collapse;width:100%;min-width:520px;background:var(--surface);}
+table.spec th,table.spec td{text-align:left;padding:13px 18px;border-bottom:1px solid var(--hair);
+  font-size:14.4px;color:var(--ink-2);vertical-align:top;}
+table.spec th{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--sunken);}
+table.spec td:first-child{color:var(--ink);font-weight:600;}
+table.spec tr:last-child td{border-bottom:none;}
+table.spec td.num{font-variant-numeric:tabular-nums;font-family:"JetBrains Mono",ui-monospace,monospace;
+  font-size:13.5px;color:var(--ink);}
+
+/* ---------- the briefing form ---------- */
+form.briefing{margin-top:8px;display:grid;gap:22px;max-width:560px;}
+form.briefing .field{display:grid;gap:8px;}
+form.briefing label{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+form.briefing label .opt{text-transform:none;letter-spacing:0;font-family:Archivo,sans-serif;
+  font-size:12px;color:var(--muted);}
+form.briefing input,form.briefing select,form.briefing textarea{
+  font-family:Archivo,-apple-system,sans-serif;font-size:15.5px;color:var(--ink);
+  background:var(--surface);border:1px solid var(--rule);border-radius:2px;padding:12px 14px;
+  width:100%;}
+form.briefing textarea{min-height:130px;resize:vertical;line-height:1.55;}
+form.briefing input:hover,form.briefing select:hover,form.briefing textarea:hover{border-color:var(--ink-2);}
+form.briefing button{justify-self:start;}
+.hp{position:absolute;left:-9999px;}
+.formnote{margin-top:26px;border-left:2px solid var(--rule);padding:2px 0 2px 18px;
+  font-size:14px;color:var(--ink-2);max-width:60ch;line-height:1.6;}
+.formnote b{color:var(--ink);font-weight:600;}
+.direct{margin-top:34px;padding-top:22px;border-top:1px solid var(--hair);
+  font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;color:var(--ink-2);line-height:2;}
+.direct a{color:var(--ink);}
+
+@media (max-width:900px){
+  .layers li{grid-template-columns:1fr;gap:6px;}
+}
