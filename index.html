@@ -1,326 +1,413 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Trouvus | AI Transformation Strategy and Implementation</title>
-    <meta
-      name="description"
-      content="Trouvus turns AI ambition into operating capability through strategy, business-model innovation, implementation design and workforce transformation."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="wrap">
-        <nav>
-          <a class="brand" href="index.html">Trouvus</a>
-          <div class="navlinks">
-            <a href="expertise.html">Expertise</a
-            ><a href="approach.html">Approach</a
-            ><a href="results.html">Results</a
-            ><a href="insights.html">Insights</a><a href="about.html">About</a
-            ><a class="btn accent" href="contact.html">Book a consultation</a>
-          </div>
-          <button
-            class="menu btn secondary"
-            aria-expanded="false"
-            aria-label="Toggle navigation menu"
-          >
-            Menu
-          </button>
-        </nav>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouvus</title>
+<meta name="description" content="Trouvus builds deterministic AI systems for decisions that carry consequences. Agents reason; a deterministic core owns the verdict; a named human owns the decision.">
+<link rel="canonical" href="https://www.trouvus.com/">
+<meta property="og:title" content="Trouvus — The machine may reason. It may not decide.">
+<meta property="og:description" content="Trouvus builds deterministic AI systems for decisions that carry consequences. Agents reason; a deterministic core owns the verdict; a named human owns the decision.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trouvus.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="glyph"></span>Trouvus</a>
+    <div class="navlinks">
+      <a href="/systems">Systems</a>
+      <a href="/architecture">Architecture</a>
+      <a href="/baseline">Baseline</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/about">About</a>
+      <a class="cta" href="/contact">Request a briefing</a>
+    </div>
+  </div>
+</nav>
+<div class="subnav">
+  <ul>
+    <li><a href="/systems">Systems</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/baseline">Baseline</a></li>
+    <li><a href="/evidence">Evidence</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Deterministic AI systems</div>
+    <h1>The machine may reason.<br><span class="dim">It may not decide.</span></h1>
+    <p class="lead">Trouvus builds AI systems for decisions that carry consequences. Agents do the reasoning. A deterministic core owns the verdict. A named human owns the decision — and when the system cannot verify its inputs, it says so instead of guessing.</p>
+    <div class="actions">
+      <a class="btn primary" href="/contact">Request a briefing</a>
+      <a class="btn ghost" href="/architecture">How the systems are built</a>
+    </div>
+
+    <div class="chain">
+      <div class="cap">The decision chain — every system we build follows it</div>
+
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Input condition">
+          <button type="button" id="mode-clean" aria-pressed="true">Verified feed</button>
+          <button type="button" id="mode-dirty" aria-pressed="false">Corrupted feed</button>
+        </div>
+        <button class="ctl" type="button" id="stepbtn">Step&nbsp;▸</button>
+        <button class="ctl" type="button" id="runbtn">Run all</button>
+        <button class="ctl quiet" type="button" id="resetbtn">Reset</button>
       </div>
-    </header>
-    <main>
-      <section class="hero">
-        <div class="wrap hero-grid">
-          <div>
-            <div class="eyebrow">
-              AI transformation strategy and implementation
-            </div>
-            <h1>Turn AI ambition into operating capability.</h1>
-            <p class="lead">
-              Trouvus helps organizations redesign strategy, business models,
-              workflows and workforce capabilities around AI—combining
-              research-grounded insight with practical implementation.
-            </p>
-            <div class="actions">
-              <a class="btn accent" href="contact.html"
-                >Book an executive consultation</a
-              ><a class="btn secondary" href="approach.html"
-                >Explore our approach</a
-              >
-            </div>
-          </div>
-          <div class="hero-mark" aria-hidden="true">
-            <div class="orb a"></div>
-            <div class="orb b"></div>
-            <div class="orb c"></div>
-            <div class="node n1"></div>
-            <div class="node n2"></div>
-            <div class="node n3"></div>
-            <div class="line l1"></div>
-            <div class="line l2"></div>
-          </div>
-        </div>
-      </section>
-      <section class="rule">
-        <div class="wrap">
-          <div class="eyebrow">The executive problem</div>
-          <div class="statement">
-            <h2>
-              AI initiatives rarely fail because the technology is unavailable.
-            </h2>
-            <p class="lead">
-              They fail because strategic priorities, operating processes,
-              governance and organizational capabilities remain disconnected.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="wrap">
-          <div class="grid-3">
-            <div class="card path">
-              <div>
-                <div class="num">01</div>
-                <h3>Decide</h3>
-                <p>
-                  Identify where AI can create defensible value, prioritize the
-                  right opportunities and build a credible transformation
-                  roadmap.
-                </p>
-              </div>
-              <a href="expertise.html#strategy">AI strategy and roadmaps →</a>
-            </div>
-            <div class="card path">
-              <div>
-                <div class="num">02</div>
-                <h3>Design and deploy</h3>
-                <p>
-                  Redesign business models, decisions and workflows; define
-                  pilots; and govern implementation against measurable outcomes.
-                </p>
-              </div>
-              <a href="expertise.html#implementation"
-                >Implementation and pilots →</a
-              >
-            </div>
-            <div class="card path">
-              <div>
-                <div class="num">03</div>
-                <h3>Adopt and scale</h3>
-                <p>
-                  Develop leadership alignment, workforce capability, governance
-                  and the operating disciplines required to scale.
-                </p>
-              </div>
-              <a href="expertise.html#workforce">Workforce transformation →</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="rule">
-        <div class="wrap">
-          <div class="split">
-            <div>
-              <div class="eyebrow">Our point of view</div>
-              <h2>
-                Transformation must redesign the system—not simply add tools.
-              </h2>
-            </div>
-            <div class="grid-2">
-              <div class="card">
-                <h3>Start with strategic value</h3>
-                <p class="muted">
-                  Technology selection follows opportunity prioritization,
-                  operating logic and evidence.
-                </p>
-              </div>
-              <div class="card">
-                <h3>Redesign work</h3>
-                <p class="muted">
-                  AI should improve decisions, workflows and value creation—not
-                  merely accelerate isolated tasks.
-                </p>
-              </div>
-              <div class="card">
-                <h3>Build capability</h3>
-                <p class="muted">
-                  Every pilot should strengthen leadership judgment, workforce
-                  competence and institutional learning.
-                </p>
-              </div>
-              <div class="card">
-                <h3>Measure outcomes</h3>
-                <p class="muted">
-                  Success is assessed through operating, strategic and
-                  organizational results rather than activity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="wrap">
-          <div class="eyebrow">Strategy-to-Scale Framework</div>
-          <h2>From strategic uncertainty to scalable capability.</h2>
-          <div class="steps">
-            <div class="step">
-              <h3>Diagnose</h3>
-              <p class="small muted">
-                Readiness, constraints and strategic priorities.
-              </p>
-            </div>
-            <div class="step">
-              <h3>Prioritize</h3>
-              <p class="small muted">Value, feasibility, risk and readiness.</p>
-            </div>
-            <div class="step">
-              <h3>Design</h3>
-              <p class="small muted">
-                Workflows, decisions, roles and governance.
-              </p>
-            </div>
-            <div class="step">
-              <h3>Pilot</h3>
-              <p class="small muted">
-                Bounded tests with explicit hypotheses and metrics.
-              </p>
-            </div>
-            <div class="step">
-              <h3>Scale</h3>
-              <p class="small muted">
-                Capabilities, controls and continuous improvement.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="rule">
-        <div class="wrap">
-          <div class="eyebrow">Intellectual assets</div>
-          <h2>Frameworks that make transformation decisions visible.</h2>
-          <div class="grid-3">
-            <div class="card tactile">
-              <h3>AI Transformation Readiness Diagnostic</h3>
-              <p>
-                Assesses strategic alignment, data, technology, governance and
-                workforce capability.
-              </p>
-            </div>
-            <div class="card tactile">
-              <h3>Human-Augmented Business Model Canvas</h3>
-              <p>
-                Examines how AI changes value creation while preserving critical
-                human agency.
-              </p>
-            </div>
-            <div class="card tactile">
-              <h3>Pilot Passport</h3>
-              <p>
-                Defines a pilot’s hypothesis, scope, owners, controls, metrics
-                and scale decision.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="wrap split">
-          <div>
-            <div class="eyebrow">Evidence, correctly classified</div>
-            <h2>Transformation claims should be easy to evaluate.</h2>
-          </div>
-          <div>
-            <div class="card proof">
-              <div class="evidence-label">Verified engagement</div>
-              <h3>Named or approved client work</h3>
-              <p class="muted">
-                Published only when scope, attribution and outcomes are
-                documented.
-              </p>
-            </div>
-            <div class="card proof">
-              <div class="evidence-label">Anonymized engagement</div>
-              <h3>Real work protected by confidentiality</h3>
-              <p class="muted">
-                Clearly identified by sector, mandate, intervention and evidence
-                status.
-              </p>
-            </div>
-            <div class="card proof">
-              <div class="evidence-label">Illustrative scenario</div>
-              <h3>A model, not a client claim</h3>
-              <p class="muted">
-                Used to explain value creation without implying completed
-                engagement.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="wrap">
-          <div class="cta">
-            <div>
-              <div class="eyebrow">Executive consultation</div>
-              <h2>Identify where AI can create defensible business value.</h2>
-              <p class="muted">
-                Begin with a focused discussion of your strategic priorities,
-                operating constraints and transformation readiness.
-              </p>
-            </div>
-            <a class="btn accent" href="contact.html">Book a consultation</a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="wrap">
-        <div class="footer-grid">
-          <div>
-            <div class="brand">Trouvus</div>
-            <p class="muted">
-              Research-grounded AI transformation for organizations that need
-              measurable operating results.
-            </p>
-            <p>
-              Toronto · International engagements<br />info@trouvus.com · +1
-              (416) 578-5353
-            </p>
-          </div>
-          <div>
-            <h3>Expertise</h3>
-            <a href="expertise.html#strategy">AI strategy</a
-            ><a href="expertise.html#business-model"
-              >Business-model innovation</a
-            ><a href="expertise.html#implementation"
-              >Pilots and implementation</a
-            ><a href="expertise.html#workforce">Workforce transformation</a>
-          </div>
-          <div>
-            <h3>Company</h3>
-            <a href="approach.html">Approach</a
-            ><a href="results.html">Results</a
-            ><a href="insights.html">Insights</a><a href="about.html">About</a>
-          </div>
-          <div>
-            <h3>Engage</h3>
-            <a href="contact.html">Executive consultation</a
-            ><a href="contact.html">Request a briefing</a
-            ><a href="contact.html">Executive education</a
-            ><a href="contact.html">Speaking</a>
-          </div>
-        </div>
-        <div class="copyright">
-          <span>© 2026 Trouvus Inc.</span
-          ><span>Privacy · Terms · Accessibility · Responsible AI</span>
+
+      <div class="chainscroll">
+        <div class="steps" id="steps">
+          <div class="step" data-state="idle"><div class="n">01</div><div class="t">Data retrieval</div><div class="bar"><i></i></div></div>
+          <div class="step gate" data-state="idle"><div class="n">02 · GATE</div><div class="t">Integrity check</div><div class="bar"><i></i></div></div>
+          <div class="step" data-state="idle"><div class="n">03</div><div class="t">Deterministic engine</div><div class="bar"><i></i></div></div>
+          <div class="step" data-state="idle"><div class="n">04</div><div class="t">Trigger math</div><div class="bar"><i></i></div></div>
+          <div class="step gate" data-state="idle"><div class="n">05 · GATE</div><div class="t">Risk check</div><div class="bar"><i></i></div></div>
+          <div class="step" data-state="idle"><div class="n">06</div><div class="t">Strict label</div><div class="bar"><i></i></div></div>
+          <div class="step term" data-state="idle"><div class="n">07</div><div class="t">Human decision</div><div class="bar"><i></i></div></div>
         </div>
       </div>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+
+      <div class="readout">
+        <div>
+          <div class="lbl">Trace</div>
+          <div class="trace" id="trace" role="status" aria-live="polite">Idle. Step through the chain, or corrupt the feed and watch it stop.</div>
+        </div>
+        <div>
+          <div class="lbl">Emitted label</div>
+          <div class="verdict" id="verdict" data-kind="idle">—</div>
+        </div>
+      </div>
+
+      <div class="foot">Two gates, and the chain terminates in a person. Language models sit alongside this chain — they explain it, summarise it, audit it, argue with it. They are not permitted to produce the final label.</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow">The problem</div>
+        <h2>Generation got cheap. Verification did not.</h2>
+      </div>
+      <div class="prose">
+        <p>The cost of producing work with AI now falls roughly with available compute. The cost of establishing that the work is correct remains bounded by human time and judgement. The distance between those two curves is where the risk now lives, and it is widening.<sup class="src"><a href="#s1">1</a></sup></p>
+        <p>An organisation that automates faster than it can verify has not become more productive. It has become faster at producing claims it cannot stand behind — and fluent output is precisely the kind that gets acted on before anyone checks.</p>
+        <p><strong>So the scarce resource is no longer intelligence. It is proof.</strong> We build systems on that assumption: not the most capable ones available, but the ones whose output an operator, an auditor, or a regulator can actually stand behind.<sup class="src"><a href="#s2">2</a></sup></p>
+      </div>
+    </div>
+
+    <div class="curvewrap">
+      <svg class="curve" id="curve" viewBox="0 0 520 250" role="img"
+           aria-label="Schematic: the cost of generating work falls steeply while the cost of verifying it stays roughly flat, so the gap between them widens.">
+        <line class="grid" x1="40" y1="60" x2="500" y2="60"></line>
+        <line class="grid" x1="40" y1="130" x2="500" y2="130"></line>
+        <path class="gap" d="M40 42 C 170 96, 300 150, 500 186 L500 96 C 300 90, 170 84, 40 78 Z"></path>
+        <path class="ln gen" style="--len:520" d="M40 42 C 170 96, 300 150, 500 186"></path>
+        <path class="ln ver" style="--len:480" d="M40 78 C 170 84, 300 90, 500 96"></path>
+        <line class="axis" x1="40" y1="20" x2="40" y2="212"></line>
+        <line class="axis" x1="40" y1="212" x2="500" y2="212"></line>
+        <text class="tick" x="40" y="232">Compute →</text>
+        <text class="tick" x="40" y="14">Cost</text>
+      </svg>
+      <dl class="legend">
+        <dt>Generation</dt>
+        <dd>Falls roughly with available compute.</dd>
+        <dt class="v">Verification</dt>
+        <dd>Bounded by human time and judgement, so it barely moves.</dd>
+        <div class="schematic">Schematic. Illustrates the direction of two cost curves; not plotted from measured data.</div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Architecture</div>
+    <h2>Four constraints, applied without exception.</h2>
+    <div class="prose" style="margin-bottom:36px;">
+      <p>These are the operating rules of every system we ship. Two of them — provenance and no orphan autonomy — are principles of the Octopus Protocol, a governance framework for multi-agent AI published by the CCAIE Foundation.<sup class="src"><a href="#s3">3</a></sup> The other two are how we instantiate that framework in software. The framework is public, citable and vendor-neutral, so we can be judged against a standard rather than a sales sheet.</p>
+    </div>
+    <div class="rules">
+
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <rect x="1" y="4" width="7" height="7"></rect>
+            <rect x="1" y="19" width="7" height="7"></rect>
+            <polyline points="8,7.5 15,7.5 15,15"></polyline>
+            <polyline points="8,22.5 15,22.5 15,15"></polyline>
+            <line x1="15" y1="15" x2="21" y2="15"></line>
+            <rect class="fill" x="21" y="11.5" width="7" height="7"></rect>
+          </svg>
+          <div class="pn">01</div>
+          <h3>The verdict is deterministic</h3>
+        </div>
+        <p>The final output of a consequential system is produced by explicit rules, not by a model's judgement. Models reason, summarise, and challenge. The label comes from the engine, and the same inputs always produce the same label.</p>
+      </div>
+
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <line x1="1" y1="15" x2="13" y2="15"></line>
+            <line class="hot" x1="16" y1="4" x2="16" y2="26"></line>
+            <line class="dash" x1="20" y1="15" x2="29" y2="15"></line>
+            <polyline class="hot" points="11.5,11.5 15,15 11.5,18.5"></polyline>
+          </svg>
+          <div class="pn">02</div>
+          <h3>Unverified input halts the chain</h3>
+        </div>
+        <p>No verified data, no authoritative output. The system returns a blocked state rather than a plausible one — and a blocked state is not permitted to display a score, a target, or a recommendation alongside it.</p>
+      </div>
+
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <rect class="fill" x="1" y="11.5" width="7" height="7"></rect>
+            <line x1="8" y1="15" x2="21" y2="15"></line>
+            <rect x="21" y="11.5" width="7" height="7"></rect>
+            <path class="dash" d="M24.5 18.5 V25 H4.5 V18.5"></path>
+          </svg>
+          <div class="pn">03</div>
+          <h3>Every claim carries provenance</h3>
+        </div>
+        <p>Assertions link to authenticated sources, and the link survives into the record. What was asked, retrieved, generated, approved, and when — held where the client controls it, replayable after the fact.</p>
+      </div>
+
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <rect x="4" y="2" width="8" height="8"></rect>
+            <rect x="18" y="2" width="8" height="8"></rect>
+            <path d="M8 10 V16 H22 V10"></path>
+            <line x1="15" y1="16" x2="15" y2="21"></line>
+            <circle class="fill" cx="15" cy="24.5" r="3.5"></circle>
+          </svg>
+          <div class="pn">04</div>
+          <h3>No orphan autonomy</h3>
+        </div>
+        <p>Every agent has a named human accountability owner — a person, decided before the output is produced rather than after the harm. The interface projects verified system state; it never invents a decision.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="blocked">
+  <div class="wrap">
+    <div class="eyebrow">The state most systems don't have</div>
+    <h2>Ours can tell you it doesn't know.</h2>
+    <div class="prose">
+      <p>Below is the complete set of action labels our market decision system is permitted to emit. Eight of them are answers. The ninth is a refusal.</p>
+      <p>If the price cannot be verified, analysis is disallowed and the label is <strong>BLOCKED</strong> — and no buy zone, stop, target, score, or tier may be shown as authoritative beside it. Mock or fallback data must be visibly marked as unverified and cannot produce an actionable label at all.</p>
+    </div>
+
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Price feed state">
+        <button type="button" id="feed-ok" aria-pressed="true">Price verified</button>
+        <button type="button" id="feed-bad" aria-pressed="false">Price unverifiable</button>
+      </div>
+    </div>
+
+    <div class="labels" id="labels">
+      <span class="lab" data-l="answer">BUY NOW</span>
+      <span class="lab lit" data-l="answer">BUY ON TRIGGER</span>
+      <span class="lab" data-l="answer">PROBE ONLY</span>
+      <span class="lab" data-l="answer">WAIT</span>
+      <span class="lab" data-l="answer">HOLD</span>
+      <span class="lab" data-l="answer">REDUCE</span>
+      <span class="lab" data-l="answer">EXIT</span>
+      <span class="lab" data-l="answer">AVOID</span>
+      <span class="lab blocked-chip" data-l="blocked">BLOCKED</span>
+    </div>
+    <div class="labcap" id="labcap">A closed label set. Adding one requires a schema change, a contract test, and a rendering test.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Systems</div>
+    <h2>One architecture, three domains.</h2>
+    <div class="systems">
+
+      <div class="sys">
+        <div>
+          <div class="tagline">Markets</div>
+          <h3>MIOS Elite V</h3>
+          <p>A deterministic market decision system. Verified market data in; disciplined regime, trigger, risk, and action output out. Not an agentic trading bot and not a narrative recommendation engine — a doctrine-constrained command system with an audit trail, run cards, and trace replay. Autonomous order execution is explicitly out of scope: the chain ends at a human.</p>
+          <p class="gain"><b>What this buys you:</b> a decision you can defend after the fact, because every label can be replayed back to the data that produced it.</p>
+          <p><span class="status live">Operating</span></p>
+          <p class="labcap" style="color:var(--muted);margin-top:14px;font-size:12.5px;">MIOS produces decision support. It does not place orders and does not constitute financial advice.</p>
+        </div>
+        <ul class="speclist">
+          <li><span>Stack</span><span>FastAPI · Next.js</span></li>
+          <li><span>Identity</span><span>OIDC / Keycloak</span></li>
+          <li><span>Execution</span><span>Out of scope</span></li>
+          <li><span>Replay</span><span>Full trace</span></li>
+        </ul>
+      </div>
+
+      <div class="sys">
+        <div>
+          <div class="tagline">Regulated practice</div>
+          <h3>Knowledge Vault &amp; Workflow Engine</h3>
+          <p>Retrieval and drafting for professions that cannot let privileged material leave their custody. Deployed on the client's own hardware or in a single-tenant instance in a chosen jurisdiction. Every generated assertion links to an authenticated source document, each output carries a confidence score, and sign-off by a named practitioner is required before use. Built for bilingual, multi-script practice.</p>
+          <p class="gain"><b>What this buys you:</b> the drafting speed without the custody problem — privileged material never leaves your control, and every sentence traces to a document you already hold.</p>
+          <p><span class="status pilot">Available for funded pilot · no client deployments to date</span></p>
+        </div>
+        <ul class="speclist">
+          <li><span>Deployment</span><span>On-prem / single-tenant</span></li>
+          <li><span>Egress</span><span>None (on-prem)</span></li>
+          <li><span>Provenance</span><span>Per assertion</span></li>
+          <li><span>Sign-off</span><span>Mandatory</span></li>
+        </ul>
+      </div>
+
+      <div class="sys">
+        <div>
+          <div class="tagline">Knowledge work</div>
+          <h3>The agent estate</h3>
+          <p>Specialised, versioned agent directives in production across research synthesis, course architecture, patent prosecution, financial analysis, technical illustration, and editorial work. The estate includes its own epistemic control agent, whose sole function is to stop vague, unfalsifiable, or overreaching claims reaching a final output — and adversarial reviewer agents that argue against a conclusion before it ships.</p>
+          <p class="gain"><b>What this buys you:</b> the components our systems are assembled from, already hardened by use on our own work before they reach yours.</p>
+          <p><span class="status">Internal tooling</span></p>
+        </div>
+        <ul class="speclist">
+          <li><span>Pattern</span><span>Orchestrator + arms</span></li>
+          <li><span>Control</span><span>Epistemic gate</span></li>
+          <li><span>Review</span><span>Adversarial</span></li>
+          <li><span>Versioning</span><span>Per directive</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Evidence</div>
+    <h2>We publish the limits of what we measured.</h2>
+    <div class="prose">
+      <p>In August 2026 our principal designed and led a ten-day applied AI programme, delivered through the CCAIE Foundation, for thirty executives of an industrial holding.<sup class="src"><a href="#s4">4</a></sup> Twenty sessions over ten working days. Five cross-functional teams each took a real process to investment-decision quality: costed from their own data, with a defined stop condition and a named owner.</p>
+    </div>
+    <div class="figures">
+      <div class="fig">
+        <div class="n">5</div>
+        <div class="l">Pilots to decision</div>
+        <div class="d">Each with economics, a risk matrix, and a 90-day roadmap.</div>
+      </div>
+      <div class="fig">
+        <div class="n">11.2<span class="u"> / </span>5.9<span class="u"> mo</span></div>
+        <div class="l">Modelled payback, two strongest</div>
+        <div class="d">Modelled from estimated durations — see the caveat below.</div>
+      </div>
+      <div class="fig">
+        <div class="n">160<span class="u"> h/mo</span></div>
+        <div class="l">Effort identified</div>
+        <div class="d">Recoverable hours across the five processes examined.</div>
+      </div>
+    </div>
+    <div class="caveat">
+      <strong>The caveat that belongs beside those numbers.</strong> No team measured the actual duration of its process step within the programme; durations were estimated from process description. The arithmetic is sound, the input quantity is unverified, and until it is measured these figures are illustrations rather than results. We told the client's owners so in writing, and we are telling you. It is also why every engagement now begins with measurement — the same rule the systems above apply to themselves.
+    </div>
+    <div class="caveat" style="border-left-color:var(--rule);">
+      <strong>And on comparison.</strong> A larger competitor in the same sector reports an average payback of 2.4 years across 95 completed digital projects.<sup class="src"><a href="#s4">4</a></sup> We have deliberately not set our figures against that number as a like-for-like result: ours are modelled from estimates, theirs are reported outcomes, and those are different kinds of claim.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap principal">
+    <div>
+      <div class="eyebrow">Who is making this argument</div>
+      <h2>The thesis has an author.</h2>
+      <div class="prose">
+        <p>A firm that argues verification is the scarce resource should say who is accountable for the claim.</p>
+        <p><strong>Dr. Mitt Nowshade Kabir</strong> is co-founder and CEO of Trouvus and Founding Director of the Canadian Center for AI Entrepreneurship. His 2026 keynote at TAKE in Lisbon, <cite>The Symbiotic Age: AGI, ASI, and the Bottleneck Inversion</cite>, argues that as intelligence becomes abundant the scarce resource becomes verification — and that the organisations which win the next decade will be those that can prove what their systems produce, not those with the most capable models.<sup class="src"><a href="#s2">2</a></sup></p>
+        <p>That argument is the reason this company builds the way it does. Everything above is an attempt to make it operational.</p>
+      </div>
+      <div class="actions" style="margin-top:28px;">
+        <a class="btn ghost" href="/about">Full biography</a>
+      </div>
+    </div>
+    <div>
+      <ul class="creds">
+        <li><span class="k">Roles</span><span>Co-founder and CEO, Trouvus · Founding Director, Canadian Center for AI Entrepreneurship</span></li>
+        <li><span class="k">Degrees</span><span>MSc computer science · MBA · PhD information technology · DBA management</span></li>
+        <li><span class="k">Books</span><span><cite>Knowledge-Based Social Entrepreneurship</cite> (Palgrave Macmillan, 2019)</span></li>
+        <li><span class="k">Recent</span><span><cite>Cognitive Industry 4.0 Reimagined — Human-Centered Intelligence and Organizational Resilience in Post-Industrial Systems</cite></span></li>
+        <li><span class="k">Forthcoming</span><span><cite>The Octopus Protocol: The Architecture of the Symbiotic Age</cite></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Where engagements start</div>
+      <h2>Measure the process before you automate it.</h2>
+    </div>
+    <div>
+      <div class="prose" style="margin-bottom:26px;">
+        <p>Thirty days, one process: how long the work actually takes, measured rather than estimated. It is inexpensive, it takes a month, and it is the only honest foundation for any claim that follows — including ours.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/contact">Request a briefing</a>
+        <a class="btn ghost" href="/baseline">How the baseline works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ol>
+      <li id="s1">Catalini, C., Hui, X., &amp; Wu, L. <cite>Some Simple Economics of AGI</cite>, 2026 — on the divergence between automation and verification cost.</li>
+      <li id="s2">Kabir, M. N. <cite>The Symbiotic Age: AGI, ASI, and the Bottleneck Inversion.</cite> Keynote, TAKE 2026, Lisbon. <!-- TODO(mitt): link to slides or abstract --></li>
+      <li id="s3">Kabir, M. N. <cite>The Octopus Protocol: Governance Principles for Multi-Agent Systems.</cite> CCAIE Foundation framework document. <!-- TODO(mitt): stable framework URL required before /architecture can link --></li>
+      <li id="s4">Applied AI executive programme, industrial holding, August 2026. Programme design and delivery: Dr. Mitt Nowshade Kabir, through the CCAIE Foundation. Figures as reported to the client's owners, including the stated measurement limitation. Comparator figures are as published by the companies concerned and are not independently audited. <!-- TODO(mitt): case study link --></li>
+    </ol>
+  </div>
+</div>
+<footer>
+  <div class="wrap footgrid">
+    <div class="meta">
+      <strong style="font-family:Archivo,sans-serif;font-size:15px;color:var(--ink);">Trouvus</strong><br>
+      Deterministic AI systems<br>
+      Toronto, Canada
+    </div>
+    <div class="meta">
+      <a href="/systems">Systems</a><br>
+      <a href="/architecture">Architecture</a><br>
+      <a href="/baseline">Baseline</a>
+    </div>
+    <div class="meta">
+      <a href="/evidence">Evidence</a><br>
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="meta">
+      <a href="mailto:info@trouvus.com">info@trouvus.com</a><br>
+      <a href="tel:+14165785353">+1 (416) 578-5353</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
 </html>

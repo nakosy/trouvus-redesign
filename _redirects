@@ -1,0 +1,25 @@
+# Wix → Netlify migration.
+# TODO(mitt): audit the live Wix sitemap and add a 301 for every indexed URL
+# before switching DNS. Once Wix is off you cannot enumerate the old URLs.
+
+/about                          /about                    301
+/services                       /systems                  301
+/our-approach                   /baseline                 301
+/startup-solutions              /systems                  301
+/contact-us                     /contact                  301
+
+# Startup Solutions submenu — all collapse to /systems
+/digital-transformation-for-startups   /systems           301
+/agile-ai-development-for-startups     /systems           301
+/scalable-solutions-for-startups       /systems           301
+/cloud-based-technologies-for-startups /systems           301
+/mentorship-and-guidance-for-startups  /systems           301
+
+# Blog: one substantive post, three filler. Preserve the surface, not the filler.
+# TODO(mitt): decide whether the July 2024 generative-AI post is republished
+# under /notes before this catch-all goes live.
+/blog                           /                         301
+/blog/*                         /                         301
+
+# Catch-all must stay last.
+/*                              /                         301

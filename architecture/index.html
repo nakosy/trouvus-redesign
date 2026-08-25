@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture — Trouvus</title>
+<meta name="description" content="What each stage of the Trouvus decision chain does, emits, and does on failure — and which of the four constraints come from the public Octopus Protocol.">
+<link rel="canonical" href="https://www.trouvus.com/architecture">
+<meta property="og:title" content="Architecture — what runs, and where the rules came from">
+<meta property="og:description" content="What each stage of the Trouvus decision chain does, emits, and does on failure — and which of the four constraints come from the public Octopus Protocol.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trouvus.com/architecture">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="glyph"></span>Trouvus</a>
+    <div class="navlinks">
+      <a href="/systems">Systems</a>
+      <a href="/architecture">Architecture</a>
+      <a href="/baseline">Baseline</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/about">About</a>
+      <a class="cta" href="/contact">Request a briefing</a>
+    </div>
+  </div>
+</nav>
+<div class="subnav">
+  <ul>
+    <li><a href="/systems">Systems</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/baseline">Baseline</a></li>
+    <li><a href="/evidence">Evidence</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<header class="pagehead" id="main">
+  <div class="wrap">
+    <div class="kicker">Architecture</div>
+    <h1>What runs, and where the rules came from.</h1>
+    <p class="lead">Two things a buyer is entitled to check. First, what the system actually does at each stage — including what it does when a stage fails. Second, which of our rules are ours and which are a public framework's, so you can hold us to a standard we do not control.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The decision chain</div>
+    <h2>Seven stages, two gates, one person.</h2>
+    <div class="prose" style="margin-bottom:34px;">
+      <p>The homepage lets you run this chain and break it. Here it stands still, annotated. <strong>Read the failure row of each stage first</strong> — a system's behaviour under failure is the part a vendor is least likely to publish and the part you most need.</p>
+    </div>
+
+    <div class="strip">
+      <svg class="dgm" viewBox="0 0 900 92" role="img"
+           aria-label="The seven-stage chain in order: data retrieval, integrity check gate, deterministic engine, trigger math, risk check gate, strict label, and finally a human decision.">
+        <rect class="node" x="2" y="26" width="112" height="40"></rect>
+        <text class="t-lyr" x="16" y="44">01</text><text class="t-name" x="16" y="60" style="font-size:12.5px">Retrieval</text>
+        <line class="conn" x1="114" y1="46" x2="134" y2="46"></line><polygon class="head" points="134,46 125,42 125,50"></polygon>
+        <rect class="node" x="136" y="26" width="112" height="40" style="stroke:var(--accent)"></rect>
+        <text class="t-lyr hot-t" x="150" y="44">02 GATE</text><text class="t-name hot-t" x="150" y="60" style="font-size:12.5px">Integrity</text>
+        <line class="conn" x1="248" y1="46" x2="268" y2="46"></line><polygon class="head" points="268,46 259,42 259,50"></polygon>
+        <rect class="node" x="270" y="26" width="112" height="40"></rect>
+        <text class="t-lyr" x="284" y="44">03</text><text class="t-name" x="284" y="60" style="font-size:12.5px">Engine</text>
+        <line class="conn" x1="382" y1="46" x2="402" y2="46"></line><polygon class="head" points="402,46 393,42 393,50"></polygon>
+        <rect class="node" x="404" y="26" width="112" height="40"></rect>
+        <text class="t-lyr" x="418" y="44">04</text><text class="t-name" x="418" y="60" style="font-size:12.5px">Trigger math</text>
+        <line class="conn" x1="516" y1="46" x2="536" y2="46"></line><polygon class="head" points="536,46 527,42 527,50"></polygon>
+        <rect class="node" x="538" y="26" width="112" height="40" style="stroke:var(--accent)"></rect>
+        <text class="t-lyr hot-t" x="552" y="44">05 GATE</text><text class="t-name hot-t" x="552" y="60" style="font-size:12.5px">Risk</text>
+        <line class="conn" x1="650" y1="46" x2="670" y2="46"></line><polygon class="head" points="670,46 661,42 661,50"></polygon>
+        <rect class="node" x="672" y="26" width="100" height="40"></rect>
+        <text class="t-lyr" x="686" y="44">06</text><text class="t-name" x="686" y="60" style="font-size:12.5px">Strict label</text>
+        <line class="conn" x1="772" y1="46" x2="792" y2="46"></line><polygon class="head" points="792,46 783,42 783,50"></polygon>
+        <rect class="node" x="794" y="26" width="104" height="40" style="fill:var(--brand);stroke:var(--brand)"></rect>
+        <text class="t-lyr" x="808" y="44" style="fill:var(--brand-ink);opacity:.7">07</text>
+        <text class="t-name" x="808" y="60" style="font-size:12.5px;fill:var(--brand-ink)">Human</text>
+        <text class="t-conn" x="2" y="14">EVERY SYSTEM WE BUILD FOLLOWS THIS ORDER</text>
+      </svg>
+    </div>
+
+    <div class="stages">
+      <div class="stage">
+        <div><div class="sn">STAGE 01</div><h3>Data retrieval</h3></div>
+        <dl>
+          <dt>Does</dt><dd>Pulls the data the run depends on from its authenticated source and binds it to the run.</dd>
+          <dt>Emits</dt><dd>A timestamped snapshot, tied to this run and no other.</dd>
+          <dt>On failure</dt><dd class="fail">No snapshot, <b>no run</b>. There is no cached-value fallback.</dd>
+        </dl>
+      </div>
+
+      <div class="stage gate">
+        <div><div class="sn">STAGE 02 · GATE</div><h3>Integrity check</h3></div>
+        <dl>
+          <dt>Does</dt><dd>Tests whether the retrieved data can be verified at all: source authenticated, freshness within tolerance, values internally consistent.</dd>
+          <dt>Emits</dt><dd>A pass, or a blocked state. Nothing in between.</dd>
+          <dt>On failure</dt><dd class="fail">The chain <b>halts here</b>. The label is BLOCKED, and no score, target, tier or buy zone may be displayed as authoritative beside it. Mock or fallback data is marked unverified and cannot produce an actionable label at all.</dd>
+        </dl>
+      </div>
+
+      <div class="stage">
+        <div><div class="sn">STAGE 03</div><h3>Deterministic engine</h3></div>
+        <dl>
+          <dt>Does</dt><dd>Applies explicit rules to the verified snapshot. No model judgement participates.</dd>
+          <dt>Emits</dt><dd>A regime classification. The same snapshot always produces the same classification.</dd>
+          <dt>On failure</dt><dd class="fail">The run aborts. <b>No partial output is published</b> — a half-finished analysis is not a cheaper analysis.</dd>
+        </dl>
+      </div>
+
+      <div class="stage">
+        <div><div class="sn">STAGE 04</div><h3>Trigger math</h3></div>
+        <dl>
+          <dt>Does</dt><dd>Computes trigger conditions from the regime and the snapshot.</dd>
+          <dt>Emits</dt><dd>A trigger state, reproducible from the run record alone.</dd>
+          <dt>On failure</dt><dd class="fail">Falls through to the risk check as <b>no-trigger</b>, never as an assumed trigger.</dd>
+        </dl>
+      </div>
+
+      <div class="stage gate">
+        <div><div class="sn">STAGE 05 · GATE</div><h3>Risk check</h3></div>
+        <dl>
+          <dt>Does</dt><dd>Tests the candidate action against risk doctrine set before the run, not during it.</dd>
+          <dt>Emits</dt><dd>A pass, a downgrade, or a block.</dd>
+          <dt>On failure</dt><dd class="fail">The action is <b>downgraded or blocked — never silently widened</b>. Doctrine is not renegotiated at runtime.</dd>
+        </dl>
+      </div>
+
+      <div class="stage">
+        <div><div class="sn">STAGE 06</div><h3>Strict label</h3></div>
+        <dl>
+          <dt>Does</dt><dd>Maps engine output onto the closed action-label set.</dd>
+          <dt>Emits</dt><dd>Exactly one of nine labels. Eight are answers; the ninth is a refusal.</dd>
+          <dt>On failure</dt><dd class="fail">If no label fits, the answer is <b>BLOCKED</b>. The set is not extended at runtime — adding a label requires a schema change, a contract test and a rendering test.</dd>
+        </dl>
+      </div>
+
+      <div class="stage term">
+        <div><div class="sn">STAGE 07</div><h3>Human decision</h3></div>
+        <dl>
+          <dt>Does</dt><dd>A named person decides. The system does not act on the label.</dd>
+          <dt>Emits</dt><dd>The record of who decided and when, held where the client controls it.</dd>
+          <dt>On failure</dt><dd class="fail">There is no automated fallback, and that is the design rather than a gap. <b>An undecided run stays undecided.</b></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="caveat" style="border-left-color:var(--rule);">
+      Language models sit alongside this chain rather than inside it. They explain it, summarise it, audit it, and argue with it. They are not permitted to produce the final label.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The four constraints</div>
+    <h2>Applied without exception.</h2>
+    <div class="prose" style="margin-bottom:36px;">
+      <p>Two of these are principles of the Octopus Protocol, a governance framework for multi-agent AI published by the CCAIE Foundation.<sup class="src"><a href="#s1">1</a></sup> Two are ours. The diagram below shows which is which, because the difference decides who you can hold us to.</p>
+    </div>
+    <div class="rules">
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <rect x="1" y="4" width="7" height="7"></rect><rect x="1" y="19" width="7" height="7"></rect>
+            <polyline points="8,7.5 15,7.5 15,15"></polyline><polyline points="8,22.5 15,22.5 15,15"></polyline>
+            <line x1="15" y1="15" x2="21" y2="15"></line><rect class="fill" x="21" y="11.5" width="7" height="7"></rect>
+          </svg>
+          <div class="pn">01</div><h3>The verdict is deterministic</h3>
+        </div>
+        <p>The final output of a consequential system is produced by explicit rules, not by a model's judgement. Models reason, summarise, and challenge. The label comes from the engine, and the same inputs always produce the same label.</p>
+      </div>
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <line x1="1" y1="15" x2="13" y2="15"></line><line class="hot" x1="16" y1="4" x2="16" y2="26"></line>
+            <line class="dash" x1="20" y1="15" x2="29" y2="15"></line>
+            <polyline class="hot" points="11.5,11.5 15,15 11.5,18.5"></polyline>
+          </svg>
+          <div class="pn">02</div><h3>Unverified input halts the chain</h3>
+        </div>
+        <p>No verified data, no authoritative output. The system returns a blocked state rather than a plausible one — and a blocked state is not permitted to display a score, a target, or a recommendation alongside it.</p>
+      </div>
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <rect class="fill" x="1" y="11.5" width="7" height="7"></rect><line x1="8" y1="15" x2="21" y2="15"></line>
+            <rect x="21" y="11.5" width="7" height="7"></rect><path class="dash" d="M24.5 18.5 V25 H4.5 V18.5"></path>
+          </svg>
+          <div class="pn">03</div><h3>Every claim carries provenance</h3>
+        </div>
+        <p>Assertions link to authenticated sources, and the link survives into the record. What was asked, retrieved, generated, approved, and when — held where the client controls it, replayable after the fact.</p>
+      </div>
+      <div class="rule-i">
+        <div class="top">
+          <svg class="gl" viewBox="0 0 30 30" aria-hidden="true">
+            <rect x="4" y="2" width="8" height="8"></rect><rect x="18" y="2" width="8" height="8"></rect>
+            <path d="M8 10 V16 H22 V10"></path><line x1="15" y1="16" x2="15" y2="21"></line>
+            <circle class="fill" cx="15" cy="24.5" r="3.5"></circle>
+          </svg>
+          <div class="pn">04</div><h3>No orphan autonomy</h3>
+        </div>
+        <p>Every agent has a named human accountability owner — a person, decided before the output is produced rather than after the harm. The interface projects verified system state; it never invents a decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Provenance of the rules</div>
+    <h2>Six principles, and what each one becomes.</h2>
+    <div class="prose" style="margin-bottom:30px;">
+      <p>The framework states properties a system must have; it does not prescribe an architecture. Each principle traces to one thing in a Trouvus system. <strong>Two are adopted verbatim as named constraints</strong> — those you can check against the published document. The two we add are marked as ours, because claiming otherwise would borrow authority the framework does not grant.</p>
+    </div>
+<div class="controls">
+      <button class="ctl" type="button" data-row="1" aria-pressed="false">P1</button>
+      <button class="ctl" type="button" data-row="2" aria-pressed="false">P2</button>
+      <button class="ctl" type="button" data-row="3" aria-pressed="false">P3</button>
+      <button class="ctl" type="button" data-row="4" aria-pressed="false">P4</button>
+      <button class="ctl" type="button" data-row="5" aria-pressed="false">P5</button>
+      <button class="ctl" type="button" data-row="6" aria-pressed="false">P6</button>
+      <button class="ctl" type="button" id="op-walk">Walk all six</button>
+      <button class="ctl" type="button" id="op-clear">Show all</button>
+    </div>
+
+    <figure>
+      <div class="figscroll">
+        <svg class="dgm" id="op" viewBox="0 0 940 640" style="min-width:840px;width:100%"
+             role="img" aria-label="Each of the six Octopus Protocol principles maps to one thing in a Trouvus system. Humans owning goals becomes a chain terminating in a human. No orphan autonomy and assertions carrying provenance are adopted verbatim as named homepage constraints. Declared confidence becomes a confidence score with a preset review threshold. A local audit record becomes run cards and trace replay held by the client. Measuring the baseline becomes the thirty-day baseline sprint. Two further constraints — deterministic verdict and halting on unverified input — are Trouvus additions and are not principles of the framework.">
+
+          <text class="t-lyr" x="20" y="30">THE OCTOPUS PROTOCOL — SIX PRINCIPLES</text>
+          <text class="t-lyr" x="560" y="30">WHAT IT BECOMES IN A TROUVUS SYSTEM</text>
+
+          <rect class="container" x="20" y="46" width="380" height="426"></rect>
+
+          <g class="row" data-row="1">
+            <rect class="node" x="36" y="62" width="348" height="58"></rect>
+            <text class="pnum" x="52" y="82">P1</text>
+            <text class="t-name" x="52" y="103" style="font-size:14px">Humans own goals and ethics</text>
+            <line class="conn" x1="402" y1="91" x2="546" y2="91"></line>
+            <polygon class="head" points="546,91 536,86 536,96"></polygon>
+            <text class="t-conn" x="474" y="84" text-anchor="middle">TERMINATES AT</text>
+            <rect class="node" x="560" y="62" width="360" height="58"></rect>
+            <text class="t-name" x="578" y="88" style="font-size:14px">The chain ends in a person</text>
+            <text class="t-role" x="578" y="107" style="font-size:12px">Step 07 — never the model</text>
+          </g>
+
+          <g class="row" data-row="2">
+            <rect class="node" x="36" y="130" width="348" height="58"></rect>
+            <text class="pnum" x="52" y="150">P2</text>
+            <text class="t-name" x="52" y="171" style="font-size:14px">No orphan autonomy</text>
+            <line class="conn" x1="402" y1="159" x2="546" y2="159"></line>
+            <polygon class="head" points="546,159 536,154 536,164"></polygon>
+            <text class="t-conn" x="474" y="152" text-anchor="middle">ADOPTED VERBATIM</text>
+            <rect class="node" x="560" y="130" width="360" height="58"></rect>
+            <text class="tag" x="578" y="150">CONSTRAINT 04</text>
+            <text class="t-name" x="578" y="171" style="font-size:14px">Every agent has a named owner</text>
+          </g>
+
+          <g class="row" data-row="3">
+            <rect class="node" x="36" y="198" width="348" height="58"></rect>
+            <text class="pnum" x="52" y="218">P3</text>
+            <text class="t-name" x="52" y="239" style="font-size:14px">Assertions carry provenance</text>
+            <line class="conn" x1="402" y1="227" x2="546" y2="227"></line>
+            <polygon class="head" points="546,227 536,222 536,232"></polygon>
+            <text class="t-conn" x="474" y="220" text-anchor="middle">ADOPTED VERBATIM</text>
+            <rect class="node" x="560" y="198" width="360" height="58"></rect>
+            <text class="tag" x="578" y="218">CONSTRAINT 03</text>
+            <text class="t-name" x="578" y="239" style="font-size:14px">Claims link to authenticated sources</text>
+          </g>
+
+          <g class="row" data-row="4">
+            <rect class="node" x="36" y="266" width="348" height="58"></rect>
+            <text class="pnum" x="52" y="286">P4</text>
+            <text class="t-name" x="52" y="307" style="font-size:14px">Confidence is declared</text>
+            <line class="conn" x1="402" y1="295" x2="546" y2="295"></line>
+            <polygon class="head" points="546,295 536,290 536,300"></polygon>
+            <text class="t-conn" x="474" y="288" text-anchor="middle">BECOMES</text>
+            <rect class="node" x="560" y="266" width="360" height="58"></rect>
+            <text class="t-name" x="578" y="292" style="font-size:14px">A score, and a preset threshold</text>
+            <text class="t-role" x="578" y="311" style="font-size:12px">Review is mandatory below it</text>
+          </g>
+
+          <g class="row" data-row="5">
+            <rect class="node" x="36" y="334" width="348" height="58"></rect>
+            <text class="pnum" x="52" y="354">P5</text>
+            <text class="t-name" x="52" y="375" style="font-size:14px">The audit record is local</text>
+            <line class="conn" x1="402" y1="363" x2="546" y2="363"></line>
+            <polygon class="head" points="546,363 536,358 536,368"></polygon>
+            <text class="t-conn" x="474" y="356" text-anchor="middle">BECOMES</text>
+            <rect class="node" x="560" y="334" width="360" height="58"></rect>
+            <text class="t-name" x="578" y="360" style="font-size:14px">Run cards and trace replay</text>
+            <text class="t-role" x="578" y="379" style="font-size:12px">Held where the client controls it</text>
+          </g>
+
+          <g class="row" data-row="6">
+            <rect class="node" x="36" y="402" width="348" height="58"></rect>
+            <text class="pnum" x="52" y="422">P6</text>
+            <text class="t-name" x="52" y="443" style="font-size:14px">Measure the baseline first</text>
+            <line class="conn" x1="402" y1="431" x2="546" y2="431"></line>
+            <polygon class="head" points="546,431 536,426 536,436"></polygon>
+            <text class="t-conn" x="474" y="424" text-anchor="middle">BECOMES</text>
+            <rect class="node" x="560" y="402" width="360" height="58"></rect>
+            <text class="t-name" x="578" y="428" style="font-size:14px">The 30-day baseline sprint</text>
+            <text class="t-role" x="578" y="447" style="font-size:12px">Where every engagement starts</text>
+          </g>
+
+          <path class="conn hot" d="M210 472 V520 H546"></path>
+          <polygon class="head hot-f" points="546,520 536,515 536,525"></polygon>
+          <text class="t-conn hot-t" x="222" y="512">IMPLEMENTS — DOES NOT RESTATE</text>
+
+          <text class="t-lyr hot-t" x="560" y="500">TROUVUS ADDITIONS — NOT IN THE FRAMEWORK</text>
+          <rect class="node" x="560" y="512" width="360" height="52" style="stroke:var(--accent)"></rect>
+          <text class="tag" x="578" y="532">CONSTRAINT 01</text>
+          <text class="t-name" x="578" y="552" style="font-size:14px">The verdict is deterministic</text>
+          <rect class="node" x="560" y="572" width="360" height="52" style="stroke:var(--accent)"></rect>
+          <text class="tag" x="578" y="592">CONSTRAINT 02</text>
+          <text class="t-name" x="578" y="612" style="font-size:14px">Unverified input halts the chain</text>
+        </svg>
+      </div>
+      <figcaption><b>Why the split matters.</b> Constraints 03 and 04 are the framework's own words, so a client can check us against a public document we do not control. Constraints 01 and 02 are ours — the framework requires neither determinism nor a halting state, and claiming otherwise would borrow authority the document does not grant. <b>Every principle lands somewhere</b>, which is the honest version of "we follow the Octopus Protocol": four of the six become product behaviour rather than named rules.</figcaption>
+    </figure>
+
+    <div class="legendline"><i></i>Accent marks the thing at stake — a drifted boundary, a Trouvus addition. It never decorates.</div>
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Limits</div>
+      <h2>What the framework does not claim.</h2>
+    </div>
+    <div class="prose">
+      <p><strong>It does not eliminate error.</strong> Provenance and confidence scoring reduce the rate at which unfounded claims survive into use. They do not reduce it to zero.</p>
+      <p><strong>It does not transfer professional responsibility.</strong> Mandatory human sign-off keeps accountability with the practitioner by design. That is the point of it, not a limitation of it.</p>
+      <p><strong>It does not require any particular technology or vendor.</strong> It states properties a system must have. How they are achieved is an engineering question, and more than one architecture can satisfy them — including one that is not ours.<sup class="src"><a href="#s1">1</a></sup></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Where engagements start</div>
+      <h2>None of this works on an unmeasured process.</h2>
+    </div>
+    <div>
+      <div class="prose" style="margin-bottom:26px;">
+        <p>Principle 6 is the one most often skipped and the one that most reliably invalidates everything built on top of it. It is also why every engagement we take begins the same way.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/baseline">The 30-day baseline</a>
+        <a class="btn ghost" href="/contact">Request a briefing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ol>
+      <li id="s1">Kabir, M. N. <cite>The Octopus Protocol: Governance Principles for Multi-Agent Systems.</cite> CCAIE Foundation Framework Document v0.1, 2026. <!-- TODO(mitt): stable framework URL --></li>
+    </ol>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footgrid">
+    <div class="meta">
+      <strong style="font-family:Archivo,sans-serif;font-size:15px;color:var(--ink);">Trouvus</strong><br>
+      Deterministic AI systems<br>
+      Toronto, Canada
+    </div>
+    <div class="meta">
+      <a href="/systems">Systems</a><br>
+      <a href="/architecture">Architecture</a><br>
+      <a href="/baseline">Baseline</a>
+    </div>
+    <div class="meta">
+      <a href="/evidence">Evidence</a><br>
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="meta">
+      <a href="mailto:info@trouvus.com">info@trouvus.com</a><br>
+      <a href="tel:+14165785353">+1 (416) 578-5353</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>

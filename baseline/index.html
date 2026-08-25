@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 30-day baseline — Trouvus</title>
+<meta name="description" content="Thirty days, one process, measured rather than estimated. The entry engagement, and the finding that made it mandatory.">
+<link rel="canonical" href="https://www.trouvus.com/baseline">
+<meta property="og:title" content="The 30-day baseline — measure the process before you automate it">
+<meta property="og:description" content="Thirty days, one process, measured rather than estimated. The entry engagement, and the finding that made it mandatory.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trouvus.com/baseline">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="glyph"></span>Trouvus</a>
+    <div class="navlinks">
+      <a href="/systems">Systems</a>
+      <a href="/architecture">Architecture</a>
+      <a href="/baseline">Baseline</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/about">About</a>
+      <a class="cta" href="/contact">Request a briefing</a>
+    </div>
+  </div>
+</nav>
+<div class="subnav">
+  <ul>
+    <li><a href="/systems">Systems</a></li>
+    <li><a href="/architecture">Architecture</a></li>
+    <li><a href="/baseline">Baseline</a></li>
+    <li><a href="/evidence">Evidence</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</div>
+
+<header class="pagehead" id="main">
+  <div class="wrap">
+    <div class="kicker">The 30-day baseline</div>
+    <h1>Measure the process before you automate it.</h1>
+    <p class="lead">Thirty days, one process: how long the work actually takes, measured rather than estimated. It is inexpensive, it takes a month, and it is the only honest foundation for any claim that follows — including ours.</p>
+    <div class="actions" style="margin-top:30px;">
+      <a class="btn primary" href="/contact">Request a briefing</a>
+      <a class="btn ghost" href="/architecture">How the systems are built</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Why this comes first</div>
+      <h2>Not one team measured its own process.</h2>
+    </div>
+    <div class="prose">
+      <p>In a ten-day executive programme delivered in August 2026, five cross-functional teams took five real processes to investment-decision quality.<sup class="src"><a href="#s1">1</a></sup> Every business case was arithmetically sound. <strong>Not one of the five had measured how long its process step actually takes.</strong> Durations were estimated from process description.</p>
+      <p>One team reported eight hours where the figure turned out to describe how long a document takes to travel, not how long a person works on it.</p>
+      <p>This is not a criticism of the participants. The organisation had no practice of operational measurement — durations were known by impression rather than by protocol. And the implication runs well past AI: where a baseline is not measured before work begins, the effect of <em>any</em> project becomes impossible to confirm or refute, and every argument about results collapses into an argument about opinions.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">The diagnostic</div>
+    <h2>Which work to offload, and which to protect.</h2>
+    <p class="note" style="font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.62;color:var(--ink-2);max-width:64ch;margin:0 0 30px;">Before measuring a process, it is worth knowing which side of the line it sits on. <strong style="color:var(--ink);font-weight:600;">Drift the boundary and watch what happens</strong> — the failure is that nothing appears to happen, which is exactly why it goes unnoticed.</p>
+<div class="controls">
+      <div class="seg" role="group" aria-label="Boundary state">
+        <button type="button" id="lg-held" aria-pressed="true">Boundary held</button>
+        <button type="button" id="lg-drift" aria-pressed="false">Boundary drifts</button>
+      </div>
+    </div>
+
+    <figure>
+      <div class="figscroll">
+        <svg class="dgm" id="lg" viewBox="0 0 920 500" style="min-width:820px;width:100%"
+             role="img" aria-label="Two columns of cognitive work separated by a governance boundary. The Grid — data processing, logistics, pattern matching, compliance checking, document synthesis — is offloaded to machines. The Leap — creative intuition, ethical judgement, cross-domain synthesis, empathic leadership, verification — is protected. When the boundary drifts rightwards, the Leap is offloaded too and the organisation's capacity atrophies while its outputs continue to look correct.">
+
+          <text class="t-lyr" x="20" y="26">THE GRID</text>
+          <text class="t-role" x="20" y="46" style="font-size:12px">Machines already do it better</text>
+          <text class="t-lyr" x="510" y="26">THE LEAP</text>
+          <text class="t-role" x="510" y="46" style="font-size:12px">Machines cannot do it at all</text>
+
+          <rect class="container" x="20" y="62" width="390" height="292"></rect>
+          <rect class="container leapbox" x="510" y="62" width="390" height="292"></rect>
+
+          <rect class="node" x="38" y="80" width="354" height="46"></rect>
+          <text class="t-name" x="56" y="109" style="font-size:14px">Data processing</text>
+          <rect class="node" x="38" y="134" width="354" height="46"></rect>
+          <text class="t-name" x="56" y="163" style="font-size:14px">Logistics</text>
+          <rect class="node" x="38" y="188" width="354" height="46"></rect>
+          <text class="t-name" x="56" y="217" style="font-size:14px">Pattern matching</text>
+          <rect class="node" x="38" y="242" width="354" height="46"></rect>
+          <text class="t-name" x="56" y="271" style="font-size:14px">Compliance checking</text>
+          <rect class="node" x="38" y="296" width="354" height="46"></rect>
+          <text class="t-name" x="56" y="325" style="font-size:14px">Document synthesis</text>
+
+          <g class="leapitem">
+            <rect class="node" x="528" y="80" width="354" height="46"></rect>
+            <text class="t-name" x="546" y="109" style="font-size:14px">Creative intuition</text>
+            <rect class="node" x="528" y="134" width="354" height="46"></rect>
+            <text class="t-name" x="546" y="163" style="font-size:14px">Ethical judgement</text>
+            <rect class="node" x="528" y="188" width="354" height="46"></rect>
+            <text class="t-name" x="546" y="217" style="font-size:14px">Cross-domain synthesis</text>
+            <rect class="node" x="528" y="242" width="354" height="46"></rect>
+            <text class="t-name" x="546" y="271" style="font-size:14px">Empathic leadership</text>
+            <rect class="node" x="528" y="296" width="354" height="46"></rect>
+            <text class="t-name" x="546" y="325" style="font-size:14px">Verification of what matters</text>
+          </g>
+
+          <rect class="node" x="20" y="386" width="390" height="52"></rect>
+          <text class="t-name" x="40" y="410" style="font-size:14px">Offload</text>
+          <text class="t-role" x="40" y="428" style="font-size:12px">consciously and completely</text>
+
+          <rect class="node outLeap" x="510" y="386" width="390" height="52"></rect>
+          <g class="s-held">
+            <text class="t-name" x="530" y="410" style="font-size:14px">Protect</text>
+            <text class="t-role" x="530" y="428" style="font-size:12px">and deliberately develop</text>
+          </g>
+          <g class="s-drift">
+            <text class="t-name hot-t" x="530" y="410" style="font-size:14px">Atrophy</text>
+            <text class="t-role hot-t" x="530" y="428" style="font-size:12px">and the outputs still look fine</text>
+          </g>
+
+          <g class="boundary-g">
+            <line class="boundary" x1="460" y1="18" x2="460" y2="452"></line>
+          </g>
+          <text class="t-conn hot-t s-held" x="460" y="472" text-anchor="middle">THE BOUNDARY — NAMED PER PROCESS</text>
+          <text class="t-conn hot-t s-drift" x="900" y="472" text-anchor="end">BOUNDARY UNSTATED — EVERYTHING IS NOW OFFLOADABLE</text>
+        </svg>
+      </div>
+      <figcaption><b>What the drift shows.</b> The boundary is the only thing doing work here. Move it right and the Leap column is inside the offload region — the nodes are still drawn, because the capability appears to still exist, and the outputs continue to look correct for some time afterwards. That delay is why atrophy is invisible while it happens, and it is the reason naming the boundary per process is the central act of governance rather than a planning nicety.</figcaption>
+    </figure>
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">What the month looks like</div>
+    <h2>One process, measured to protocol.</h2>
+    <div class="sprint">
+      <div class="wk">
+        <div class="k">WEEK 01 — SCOPE</div>
+        <p>Choose one process and name the person answerable for it. Describe it as it actually runs rather than as the regulations say it runs — usually the first time that description has existed.</p>
+      </div>
+      <div class="wk">
+        <div class="k">WEEK 02 — INSTRUMENT</div>
+        <p>Define what will be counted, by whom, and how. Agree the stop condition now, while nobody is invested in the answer.</p>
+      </div>
+      <div class="wk">
+        <div class="k">WEEK 03 — MEASURE</div>
+        <p>Collect actual durations against the protocol. Not impressions, not recollection, not a figure someone remembers from a meeting.</p>
+      </div>
+      <div class="wk">
+        <div class="k">WEEK 04 — REPORT</div>
+        <p>A measured baseline, the variance around it, and a plain statement of what the measurement does and does not support. Including, where it applies, that automation is not yet justified.</p>
+      </div>
+    </div>
+    <div class="caveat">
+      <strong>You may not like the answer, and that is the value.</strong> A baseline that shows a process is already efficient has saved you the cost of automating it. We would rather tell you that in month one than build something that cannot be defended in month nine.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">What we found downstream</div>
+      <h2>Training does not close this gap.</h2>
+    </div>
+    <div class="prose">
+      <p>We wrote that sentence into the report to the client's owners, about our own programme, because it is true: a programme of that design takes projects to the point of an investment decision and by construction cannot take them to a working system.<sup class="src"><a href="#s1">1</a></sup></p>
+      <p>Four things were missing, and none of them was knowledge.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <ul class="missing">
+      <li><span class="mn">01</span><span><b>No approved environment.</b> No corporate contour in which an employee can assemble an assistant through a standard procedure. Without one, every initiative becomes an IT ticket and the queue stops at around the twentieth.</span></li>
+      <li><span class="mn">02</span><span><b>No portfolio mechanism.</b> No intake, no selection criteria, no funding route, and — most missing of all — no procedure for stopping a project. Five pilots can be run by hand. Fifty cannot.</span></li>
+      <li><span class="mn">03</span><span><b>No data competence.</b> Not programmers: someone able to judge whether accounting-system data is fit for an assistant to work with, and prove it by measurement.</span></li>
+      <li><span class="mn">04</span><span><b>No measurement practice.</b> The baseline problem above, generalised across the organisation.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Start here</div>
+      <h2>A month, one process, a number you can defend.</h2>
+    </div>
+    <div>
+      <div class="prose" style="margin-bottom:26px;">
+        <p>Every claim we make about your systems afterwards rests on this. So does every claim you will make to your own board.</p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="/contact">Request a briefing</a>
+        <a class="btn ghost" href="/evidence">Read the evidence</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <ol>
+      <li id="s1">Applied AI executive programme, industrial holding, August 2026. Programme design and delivery: Dr. Mitt Nowshade Kabir, through the CCAIE Foundation. Findings as reported to the client's owners, including the stated measurement limitation. <!-- TODO(mitt): case study link --></li>
+    </ol>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footgrid">
+    <div class="meta">
+      <strong style="font-family:Archivo,sans-serif;font-size:15px;color:var(--ink);">Trouvus</strong><br>
+      Deterministic AI systems<br>
+      Toronto, Canada
+    </div>
+    <div class="meta">
+      <a href="/systems">Systems</a><br>
+      <a href="/architecture">Architecture</a><br>
+      <a href="/baseline">Baseline</a>
+    </div>
+    <div class="meta">
+      <a href="/evidence">Evidence</a><br>
+      <a href="/about">About</a><br>
+      <a href="/contact">Contact</a>
+    </div>
+    <div class="meta">
+      <a href="mailto:info@trouvus.com">info@trouvus.com</a><br>
+      <a href="tel:+14165785353">+1 (416) 578-5353</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
