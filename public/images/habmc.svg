@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Inter,sans-serif">
+<rect width="640" height="300" fill="#fbfaf6"/>
+<text x="32" y="46" font-size="20" fill="#17211f" font-family="Georgia,serif" letter-spacing="-0.5">Human-Augmented Business Model Canvas</text>
+<text x="32" y="68" font-size="11" fill="#62706c">For every value-creating activity: automate, augment, or keep human-led?</text>
+<g font-size="11">
+<rect x="32" y="92" width="184" height="150" rx="12" fill="#eceafd"/>
+<text x="48" y="120" font-weight="800" fill="#2f8f63" font-size="12">AUTOMATE</text>
+<text x="48" y="142" fill="#394743">High volume, low ambiguity,</text>
+<text x="48" y="158" fill="#394743">clear rules, verifiable output.</text>
+<text x="48" y="186" fill="#62706c" font-size="10">Scheduling - matching -</text>
+<text x="48" y="200" fill="#62706c" font-size="10">classification - monitoring</text>
+<rect x="228" y="92" width="184" height="150" rx="12" fill="#e7f3ec" stroke="#5B46F6" stroke-width="1.5"/>
+<text x="244" y="120" font-weight="800" fill="#5B46F6" font-size="12">AUGMENT</text>
+<text x="244" y="142" fill="#394743">Judgment with machine leverage:</text>
+<text x="244" y="158" fill="#394743">drafting, analysis, options.</text>
+<text x="244" y="186" fill="#62706c" font-size="10">Diagnosis support - research -</text>
+<text x="244" y="200" fill="#62706c" font-size="10">proposals - design exploration</text>
+<rect x="424" y="92" width="184" height="150" rx="12" fill="#17211f"/>
+<text x="440" y="120" font-weight="800" fill="#eceafd" font-size="12">HUMAN-LED</text>
+<text x="440" y="142" fill="#bfc9c5">Accountability, ethics, trust,</text>
+<text x="440" y="158" fill="#bfc9c5">relationships, novel judgment.</text>
+<text x="440" y="186" fill="#8fa39d" font-size="10">Negotiation - safety calls -</text>
+<text x="440" y="200" fill="#8fa39d" font-size="10">strategy - client relationships</text>
+<text x="320" y="272" font-size="10" fill="#62706c" text-anchor="middle">The boundary lines are strategic decisions - revisited as capability, evidence and trust mature.</text>
+</g></svg>

@@ -1,0 +1,20 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  variant?: 'network' | 'waves' | 'pipeline';
+  compact?: boolean;
+}
+const { eyebrow, title, lead, variant = 'network', compact = true } = Astro.props;
+---
+
+<section class:list={['page-hero', { compact }]}>
+  <canvas class="hero-canvas" data-variant={variant} aria-hidden="true"></canvas>
+  <div class="wrap hero-copy">
+    <div class="eyebrow">{eyebrow}</div>
+    <h1>{title}</h1>
+    <p class="lead">{lead}</p>
+    <slot />
+  </div>
+</section>

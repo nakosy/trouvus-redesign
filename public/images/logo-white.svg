@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 72" role="img" aria-label="Trouvus">
+<g fill="#ffffff">
+<circle cx="12" cy="26" r="7" opacity="0.85"/><circle cx="36" cy="26" r="7" opacity="0.85"/><circle cx="60" cy="26" r="7" opacity="0.85"/>
+<circle cx="12" cy="50" r="7"/><circle cx="36" cy="50" r="7"/><circle cx="60" cy="50" r="7"/>
+</g>
+<text x="82" y="58" font-family="Inter,Arial,Helvetica,sans-serif" font-size="56" font-weight="800" letter-spacing="-2" fill="#ffffff">Trouvus</text>
+</svg>

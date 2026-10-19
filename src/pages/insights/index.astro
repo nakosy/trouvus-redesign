@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import CTA from '../../components/CTA.astro';
+
+const posts = (await getCollection('insights', ({ data }) => !data.draft)).sort((a, b) => Number(b.data.featured) - Number(a.data.featured));
+const featured = posts.find((post) => post.data.featured) ?? posts[0];
+const iconByTag: Record<string, string> = {
+  governance: '/images/icon-evidence.svg', strategy: '/images/icon-strategy.svg',
+  'human-agency': '/images/icon-workforce.svg', frameworks: '/images/icon-bizmodel.svg',
+};
+---
+
+<BaseLayout title="Insights | Trouvus" description="Executive briefings, research notes and frameworks for AI transformation, business models and human-centred automation.">
+  <Hero eyebrow="Insights" title="Executive intelligence for consequential AI decisions." lead="Research-grounded briefings, frameworks and field guides for enterprise leaders." variant="waves" />
+  <section>
+    <div class="wrap">
+      <article class="featured">
+        <div>
+          <div class="evidence-label">Featured briefing</div>
+          <h2>{featured.data.title}</h2>
+          <p class="takeaway">{featured.data.takeaway}</p>
+          <p>
+            {featured.data.tags.map((tag) => <span class="tag">{tag.replace('-', ' ')}</span>)}
+            <span class="readtime">{featured.data.readTime}</span>
+          </p>
+          <a class="btn accent" href={`/insights/${featured.id}/`}>Read the briefing →</a>
+        </div>
+        <img src={featured.data.visual ?? '/images/editorial-abstract.svg'} alt={featured.data.visualAlt ?? ''} width="640" height="260" />
+      </article>
+      <div class="pills" aria-label="Filter insights">
+        <button class="pill active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="pill" type="button" data-filter="strategy" aria-pressed="false">Strategy</button>
+        <button class="pill" type="button" data-filter="governance" aria-pressed="false">Governance</button>
+        <button class="pill" type="button" data-filter="human-agency" aria-pressed="false">Human agency</button>
+        <button class="pill" type="button" data-filter="frameworks" aria-pressed="false">Frameworks</button>
+      </div>
+      <div class="grid-3" aria-live="polite">
+        {posts.filter((post) => post.id !== featured.id).map((post) => (
+          <article class="card tactile glass insight-card" data-tags={post.data.tags.join(' ')}>
+            <img class="icon" src={iconByTag[post.data.tags[0]] ?? '/images/icon-insight.svg'} alt="" loading="lazy" decoding="async" />
+            <div class="evidence-label">{post.data.cardLabel}</div>
+            <h2>{post.data.title}</h2>
+            <p class="takeaway">{post.data.takeaway}</p>
+            <p><span class="readtime">{post.data.readTime}</span></p>
+            <a class="card-cta" href={`/insights/${post.id}/`}>Read {post.data.cardLabel.toLowerCase()} →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTA title="Request the executive AI transformation briefing." text="A concise briefing for leadership teams evaluating priorities, governance and organizational readiness." label="Request the briefing" />
+</BaseLayout>

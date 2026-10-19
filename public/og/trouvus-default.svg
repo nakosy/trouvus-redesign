@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="indigo"><stop stop-color="#5B46F6" stop-opacity=".5"/><stop offset="1" stop-color="#5B46F6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="green"><stop stop-color="#2F8F63" stop-opacity=".4"/><stop offset="1" stop-color="#2F8F63" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0F17"/>
+  <circle cx="1030" cy="90" r="330" fill="url(#indigo)"/><circle cx="100" cy="620" r="300" fill="url(#green)"/>
+  <g stroke="#344267" stroke-width="2" opacity=".8"><path d="M770 170L1010 250L880 420L1080 480L690 390Z"/><path d="M770 170L880 420M1010 250L690 390M1080 480L770 170"/></g>
+  <g><circle cx="770" cy="170" r="8" fill="#00CFE0"/><circle cx="1010" cy="250" r="8" fill="#8F7FFF"/><circle cx="880" cy="420" r="8" fill="#00CFE0"/><circle cx="1080" cy="480" r="8" fill="#8F7FFF"/><circle cx="690" cy="390" r="8" fill="#00CFE0"/></g>
+  <text x="84" y="115" fill="#68C4FF" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="4">TROUVUS</text>
+  <text x="84" y="220" fill="#fff" font-family="Georgia,serif" font-size="72">Turn AI ambition</text>
+  <text x="84" y="305" fill="#fff" font-family="Georgia,serif" font-size="72">into operating capability.</text>
+  <text x="88" y="380" fill="#C5D0E2" font-family="Arial,sans-serif" font-size="22">AI transformation strategy and implementation</text>
+  <g>
+    <rect x="84" y="495" width="76" height="76" rx="20" fill="#FFFFFF" fill-opacity=".09"/>
+    <rect x="101" y="512" width="24" height="24" rx="8" fill="#2F9EFF"/>
+    <rect x="133" y="512" width="16" height="16" rx="5" fill="#0C79D8"/>
+    <rect x="101" y="544" width="16" height="16" rx="5" fill="#0C79D8"/>
+    <rect x="125" y="536" width="24" height="24" rx="8" fill="#68C4FF"/>
+  </g>
+</svg>

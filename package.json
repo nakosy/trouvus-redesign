@@ -1,0 +1,34 @@
+{
+  "name": "trouvus-redesign",
+  "version": "1.0.0",
+  "description": "Trouvus enterprise AI transformation website",
+  "private": true,
+  "scripts": {
+    "test": "npm run check && npm run build && npm run check:links",
+    "dev": "npm run build:client && ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build:client": "node scripts/build-client.mjs",
+    "build": "npm run build:client && ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/build-sites-entry.mjs",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "check:links": "node scripts/check-dist.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nakosy/trouvus-redesign.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nakosy/trouvus-redesign/issues"
+  },
+  "homepage": "https://github.com/nakosy/trouvus-redesign#readme",
+  "type": "module",
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.2.9",
+    "typescript": "^6.0.3"
+  }
+}

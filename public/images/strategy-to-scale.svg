@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Georgia,serif">
+<rect width="640" height="300" fill="#fbfaf6"/>
+<text x="32" y="46" font-size="20" fill="#17211f" letter-spacing="-0.5">Strategy-to-Scale Framework</text>
+<text x="32" y="68" font-size="11" fill="#62706c" font-family="Inter,sans-serif">From strategic uncertainty to scalable capability</text>
+<g font-family="Inter,sans-serif">
+<rect x="32" y="110" width="100" height="110" rx="12" fill="#eceafd"/>
+<circle cx="82" cy="140" r="10" fill="none" stroke="#43a878" stroke-width="2"/><circle cx="82" cy="140" r="3.5" fill="#43a878"/>
+<text x="82" y="180" font-size="13" font-weight="700" fill="#17211f" text-anchor="middle">Diagnose</text>
+<text x="82" y="198" font-size="9" fill="#62706c" text-anchor="middle">Readiness and</text><text x="82" y="209" font-size="9" fill="#62706c" text-anchor="middle">constraints</text>
+<path d="M136 165h20" stroke="#5B46F6" stroke-width="1.5"/><path d="M152 160l6 5-6 5" fill="none" stroke="#5B46F6" stroke-width="1.5"/>
+<rect x="160" y="110" width="100" height="110" rx="12" fill="#e7f3ec"/>
+<path d="M200 148v-14m10 14v-22m10 22v-8" stroke="#5B46F6" stroke-width="3" stroke-linecap="round"/>
+<text x="210" y="180" font-size="13" font-weight="700" fill="#17211f" text-anchor="middle">Prioritize</text>
+<text x="210" y="198" font-size="9" fill="#62706c" text-anchor="middle">Value, feasibility,</text><text x="210" y="209" font-size="9" fill="#62706c" text-anchor="middle">risk, readiness</text>
+<path d="M264 165h20" stroke="#5B46F6" stroke-width="1.5"/><path d="M280 160l6 5-6 5" fill="none" stroke="#5B46F6" stroke-width="1.5"/>
+<rect x="288" y="110" width="100" height="110" rx="12" fill="#eceafd"/>
+<rect x="322" y="128" width="12" height="12" rx="2" fill="none" stroke="#5B46F6" stroke-width="2"/><rect x="340" y="140" width="12" height="12" rx="2" fill="#5B46F6"/><path d="M334 134l6 6" stroke="#5B46F6" stroke-width="1.5"/>
+<text x="338" y="180" font-size="13" font-weight="700" fill="#17211f" text-anchor="middle">Design</text>
+<text x="338" y="198" font-size="9" fill="#62706c" text-anchor="middle">Workflows, roles,</text><text x="338" y="209" font-size="9" fill="#62706c" text-anchor="middle">governance</text>
+<path d="M392 165h20" stroke="#5B46F6" stroke-width="1.5"/><path d="M408 160l6 5-6 5" fill="none" stroke="#5B46F6" stroke-width="1.5"/>
+<rect x="416" y="110" width="100" height="110" rx="12" fill="#e7f3ec"/>
+<circle cx="466" cy="140" r="12" fill="none" stroke="#5B46F6" stroke-width="2" stroke-dasharray="3 3"/><circle cx="466" cy="140" r="4" fill="#5B46F6"/>
+<text x="466" y="180" font-size="13" font-weight="700" fill="#17211f" text-anchor="middle">Pilot</text>
+<text x="466" y="198" font-size="9" fill="#62706c" text-anchor="middle">Bounded tests,</text><text x="466" y="209" font-size="9" fill="#62706c" text-anchor="middle">explicit metrics</text>
+<path d="M520 165h20" stroke="#5B46F6" stroke-width="1.5"/><path d="M536 160l6 5-6 5" fill="none" stroke="#5B46F6" stroke-width="1.5"/>
+<rect x="544" y="110" width="64" height="110" rx="12" fill="#5B46F6"/>
+<path d="M566 148l10-12 10 12" fill="none" stroke="#fbfaf6" stroke-width="2"/><path d="M576 136v22" stroke="#fbfaf6" stroke-width="2"/>
+<text x="576" y="180" font-size="13" font-weight="700" fill="#fbfaf6" text-anchor="middle">Scale</text>
+<text x="576" y="198" font-size="9" fill="#eceafd" text-anchor="middle">Capability,</text><text x="576" y="209" font-size="9" fill="#eceafd" text-anchor="middle">controls</text>
+<path d="M576 232v24H82v-8" stroke="#d9ddd7" stroke-width="1.2" fill="none"/><path d="M77 254l5-8 5 8" fill="none" stroke="#62706c" stroke-width="1.2"/>
+<text x="320" y="270" font-size="9" fill="#62706c" text-anchor="middle">Continuous learning loop - every scaled capability sharpens the next diagnosis</text>
+</g></svg>

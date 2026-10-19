@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" font-family="Inter,sans-serif">
+<rect width="640" height="240" fill="#ffffff"/>
+<text x="32" y="38" font-size="16" fill="#111827" font-family="Georgia,serif">The Five Value Lenses</text>
+<g font-size="10.5" text-anchor="middle">
+<rect x="30" y="60" width="108" height="120" rx="12" fill="#eceafd"/><text x="84" y="90" font-weight="800" fill="#5B46F6">GROWTH</text><text x="84" y="112" fill="#4b5563">Revenue quality,</text><text x="84" y="126" fill="#4b5563">pricing, retention</text>
+<rect x="150" y="60" width="108" height="120" rx="12" fill="#e7f3ec"/><text x="204" y="90" font-weight="800" fill="#2f8f63">DECISIONS</text><text x="204" y="112" fill="#4b5563">Accuracy, speed,</text><text x="204" y="126" fill="#4b5563">consistency</text>
+<rect x="270" y="60" width="108" height="120" rx="12" fill="#fff3d6"/><text x="324" y="90" font-weight="800" fill="#9a6b00">RESILIENCE</text><text x="324" y="112" fill="#4b5563">Losses that</text><text x="324" y="126" fill="#4b5563">never happen</text>
+<rect x="390" y="60" width="108" height="120" rx="12" fill="#e7f3ec"/><text x="444" y="90" font-weight="800" fill="#2f8f63">LEARNING</text><text x="444" y="112" fill="#4b5563">Capability that</text><text x="444" y="126" fill="#4b5563">compounds</text>
+<rect x="510" y="60" width="108" height="120" rx="12" fill="#eceafd"/><text x="564" y="90" font-weight="800" fill="#5B46F6">OPTIONALITY</text><text x="564" y="112" fill="#4b5563">Cheap probes,</text><text x="564" y="126" fill="#4b5563">large upside</text>
+</g>
+<text x="320" y="212" font-size="10" fill="#64748B" text-anchor="middle">Cost reduction is one column of one lens — not the whole vocabulary.</text>
+</svg>

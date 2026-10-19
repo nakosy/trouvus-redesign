@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 72" role="img" aria-label="Trouvus">
+  <rect x="4" y="4" width="64" height="64" rx="18" fill="#FFFFFF" fill-opacity=".09"/>
+  <rect x="19" y="18" width="21" height="21" rx="7" fill="#2F9EFF"/>
+  <rect x="47" y="18" width="14" height="14" rx="5" fill="#0C79D8"/>
+  <rect x="19" y="47" width="14" height="14" rx="5" fill="#0C79D8"/>
+  <rect x="40" y="40" width="21" height="21" rx="7" fill="#68C4FF"/>
+  <text x="82" y="57" fill="#FFFFFF" font-family="Inter,Arial,Helvetica,sans-serif" font-size="55" font-weight="800" letter-spacing="-2">Trouvus</text>
+</svg>

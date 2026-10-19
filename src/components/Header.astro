@@ -1,0 +1,30 @@
+---
+const path = Astro.url.pathname;
+const items = [
+  ['/expertise/', 'Expertise'],
+  ['/approach/', 'Approach'],
+  ['/perspectives/', 'Perspectives'],
+  ['/insights/', 'Insights'],
+  ['/about/', 'About'],
+];
+const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
+---
+
+<header class="site-header" data-header>
+  <div class="wrap">
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Trouvus home">
+        <img src="/images/logo-blue.svg" alt="Trouvus" width="330" height="72" />
+      </a>
+      <div class="navlinks" id="primary-menu" data-menu>
+        {items.map(([href, label]) => (
+          <a href={href} aria-current={isActive(href) ? 'page' : undefined}>{label}</a>
+        ))}
+        <a class="btn accent" href="/contact/" aria-current={path === '/contact/' ? 'page' : undefined}>Book a consultation</a>
+      </div>
+      <button class="menu btn secondary" type="button" aria-expanded="false" aria-controls="primary-menu" data-menu-button>
+        <span>Menu</span>
+      </button>
+    </nav>
+  </div>
+</header>

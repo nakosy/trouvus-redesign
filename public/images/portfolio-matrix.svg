@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" font-family="Inter,sans-serif">
+<rect width="640" height="260" fill="#ffffff"/>
+<text x="32" y="36" font-size="16" fill="#111827" font-family="Georgia,serif">From inventory to portfolio</text>
+<g font-size="10.5">
+<rect x="40" y="60" width="160" height="150" rx="12" fill="#f1f5f9"/>
+<text x="120" y="84" text-anchor="middle" font-weight="800" fill="#64748B">INVENTORY</text>
+<g fill="#94a3b8"><circle cx="75" cy="110" r="5"/><circle cx="120" cy="100" r="5"/><circle cx="160" cy="118" r="5"/><circle cx="90" cy="145" r="5"/><circle cx="140" cy="150" r="5"/><circle cx="105" cy="180" r="5"/><circle cx="165" cy="178" r="5"/></g>
+<text x="120" y="200" text-anchor="middle" fill="#64748B" font-size="9">80 ideas, no logic</text>
+<path d="M215 135h50" stroke="#5B46F6" stroke-width="2"/><path d="M259 129l8 6-8 6" fill="none" stroke="#5B46F6" stroke-width="2"/>
+<text x="240" y="122" text-anchor="middle" fill="#5B46F6" font-size="9" font-weight="700">SCORE ×5</text>
+<rect x="285" y="60" width="315" height="150" rx="12" fill="#eceafd"/>
+<text x="442" y="84" text-anchor="middle" font-weight="800" fill="#5B46F6">PORTFOLIO</text>
+<rect x="305" y="100" width="85" height="90" rx="10" fill="#5B46F6"/><text x="347" y="130" text-anchor="middle" fill="#fff" font-weight="700">Proof</text><text x="347" y="146" text-anchor="middle" fill="#dcd6ff" font-size="8.5">Fast, visible</text><text x="347" y="158" text-anchor="middle" fill="#dcd6ff" font-size="8.5">value</text>
+<rect x="400" y="100" width="85" height="90" rx="10" fill="#2f8f63"/><text x="442" y="130" text-anchor="middle" fill="#fff" font-weight="700">Capability</text><text x="442" y="146" text-anchor="middle" fill="#d7f0e2" font-size="8.5">Lowers cost of</text><text x="442" y="158" text-anchor="middle" fill="#d7f0e2" font-size="8.5">what follows</text>
+<rect x="495" y="100" width="85" height="90" rx="10" fill="#b8860b"/><text x="537" y="130" text-anchor="middle" fill="#fff" font-weight="700">Options</text><text x="537" y="146" text-anchor="middle" fill="#ffe9b3" font-size="8.5">Cheap probes,</text><text x="537" y="158" text-anchor="middle" fill="#ffe9b3" font-size="8.5">defined triggers</text>
+<text x="442" y="200" text-anchor="middle" fill="#5B46F6" font-size="9">Ranked · sequenced · governed · with a "not now" list</text>
+</g></svg>

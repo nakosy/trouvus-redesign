@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" font-family="Inter,sans-serif">
+<rect width="640" height="260" fill="#ffffff"/>
+<text x="32" y="36" font-size="16" fill="#111827" font-family="Georgia,serif">Efficiency now, capability later</text>
+<g stroke="#e2e5ea"><path d="M70 210H590"/><path d="M70 210V60"/></g>
+<path d="M70 180 C180 130 320 105 590 95" fill="none" stroke="#5B46F6" stroke-width="2.5"/>
+<path d="M70 150 C200 155 340 185 590 205" fill="none" stroke="#FF6B6B" stroke-width="2.5" stroke-dasharray="6 4"/>
+<circle cx="70" cy="180" r="4" fill="#5B46F6"/><circle cx="70" cy="150" r="4" fill="#FF6B6B"/>
+<text x="595" y="98" font-size="10.5" fill="#5B46F6">Throughput</text>
+<text x="595" y="208" font-size="10.5" fill="#FF6B6B">Expertise</text>
+<text x="330" y="235" font-size="10" fill="#64748B" text-anchor="middle">Time since undesigned offloading →</text>
+<text x="330" y="252" font-size="10" fill="#64748B" text-anchor="middle">Illustrative model — the gap is the hidden cost.</text>
+</svg>

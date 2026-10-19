@@ -1,0 +1,60 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTA from '../components/CTA.astro';
+
+interface Heading { id: string; text: string; }
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  lead: string;
+  author: string;
+  published: Date;
+  updated?: Date;
+  readTime: string;
+  tags: string[];
+  heroVariant: 'network' | 'waves' | 'pipeline';
+  visual?: string;
+  visualAlt?: string;
+  headings: Heading[];
+  ctaTitle: string;
+  ctaText: string;
+}
+const props = Astro.props;
+const articleUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const compactVisuals = new Set(['/images/editorial-abstract.svg', '/images/five-lenses.svg', '/images/offloading-curve.svg', '/images/portfolio-matrix.svg']);
+const visualDimensions = compactVisuals.has(props.visual ?? '') ? { width: 640, height: 260 } : { width: 640, height: 300 };
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: props.title,
+  description: props.description,
+  datePublished: props.published.toISOString(),
+  dateModified: (props.updated ?? props.published).toISOString(),
+  author: { '@type': 'Person', name: props.author, url: 'https://www.trouvus.com/about/' },
+  publisher: { '@type': 'Organization', name: 'Trouvus', logo: { '@type': 'ImageObject', url: 'https://www.trouvus.com/images/logo-blue.svg' } },
+  mainEntityOfPage: articleUrl,
+  image: new URL(props.visual ?? '/og/trouvus-default.png', Astro.site).toString(),
+  keywords: props.tags.join(', '),
+};
+---
+
+<BaseLayout title={`${props.title} | Trouvus Insights`} description={props.description} type="article" publishedTime={props.published} updatedTime={props.updated} structuredData={structuredData}>
+  <Hero eyebrow={props.eyebrow} title={props.title} lead={props.lead} variant={props.heroVariant}>
+    <p class="small muted">By {props.author} · {props.readTime} · Trouvus Insights</p>
+  </Hero>
+  <section class="article-shell">
+    <div class="wrap">
+      {props.visual && <img class="article-hero-visual" src={props.visual} alt={props.visualAlt ?? ''} width={visualDimensions.width} height={visualDimensions.height} fetchpriority="high" decoding="async" />}
+      <div class="article-grid">
+        <nav class="toc" aria-label="Article contents">
+          <div class="toc-title">In this briefing</div>
+          {props.headings.map((heading) => <a href={`#${heading.id}`}>{heading.text}</a>)}
+        </nav>
+        <article class="content"><slot /></article>
+      </div>
+    </div>
+  </section>
+  <CTA title={props.ctaTitle} text={props.ctaText} />
+</BaseLayout>
