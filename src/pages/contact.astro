@@ -1,16 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <BaseLayout title="Executive AI Value Diagnostic | Trouvus" description="Request a focused 90-minute working session to map an AI opportunity, screen readiness and risk, and define a governed next step.">
-  <section class="page-hero">
-    <canvas class="hero-canvas" data-variant="pipeline"></canvas>
-    <div class="wrap">
-      <div class="eyebrow">Executive AI Value Diagnostic</div>
-      <h1>Turn strategic uncertainty into a governed next decision.</h1>
-      <p class="lead">A focused 90-minute working session to clarify where AI could create value, expose the constraints that matter and identify the most credible next step.</p>
-    </div>
-  </section>
+  <Hero eyebrow="Executive AI Value Diagnostic" title="Turn strategic uncertainty into a governed next decision." lead="A focused 90-minute working session to clarify where AI could create value, expose the constraints that matter and identify the most credible next step." variant="pipeline" />
   <section>
     <div class="wrap contact-grid">
       <div>

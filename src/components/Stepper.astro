@@ -1,0 +1,22 @@
+---
+interface Step { label: string; title: string; text: string; href: string; cta: string; icon: string; }
+interface Props { steps: Step[]; }
+const { steps } = Astro.props;
+---
+
+<div class="stepper">
+  <!-- Revealed by site.js; without JavaScript every panel stays visible. -->
+  <div class="stepper-tabs" hidden>
+    {steps.map((step, i) => <button class:list={['stepper-tab', { active: i === 0 }]} data-tab={i + 1} type="button">{step.label}</button>)}
+  </div>
+  {steps.map((step, i) => (
+    <div class:list={['stepper-panel', { active: i === 0 }]} data-panel={i + 1}>
+      <div>
+        <h3>{step.title}</h3>
+        <p class="muted">{step.text}</p>
+        <a class="card-cta" href={step.href}>{step.cta}</a>
+      </div>
+      <img src={`/images/${step.icon}.svg`} loading="lazy" decoding="async" alt="" width="110" height="110" />
+    </div>
+  ))}
+</div>

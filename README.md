@@ -29,15 +29,14 @@ This runs Astro type checking, a static production build, and an internal-link/m
 
 ## Site structure
 
-- `src/components/` — shared header, footer, hero and CTA components
+- `src/components/` — shared header, footer, hero, CTA, card, stepper, pipeline and service-row components
 - `src/layouts/` — base and long-form article layouts
 - `src/pages/` — routes, legal pages and the insights index
 - `src/content/insights/` — Markdown/MDX insight articles
 - `src/styles/global.css` — design tokens, responsive layouts and motion rules
 - `public/images/` — logos, diagrams and animated SVG visuals
 - `src/client/site.js` — source for progressive interactions and lightweight canvas visuals
-- `public/scripts/site.js` — generated, minified browser bundle
-- `legacy-prototype/` — archived first HTML prototype for reference
+- `public/scripts/site.js` — generated, minified browser bundle (git-ignored; built by `npm run build:client`)
 
 ## Add an article
 
