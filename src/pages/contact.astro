@@ -2,6 +2,48 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title='Book an Executive Consultation | Trouvus' description='Discuss AI strategy, business-model innovation, implementation, workforce transformation or executive education with Trouvus.'>
-<section class="page-hero"><canvas class="hero-canvas" data-variant="pipeline"></canvas><div class="wrap"><div class="eyebrow">Executive consultation</div><h1>Start with the strategic problem.</h1><p class="lead">Tell us what your organization is trying to decide, change or build. We will use the first conversation to assess fit, clarify the problem and identify a credible next step.</p></div></section><section><div class="wrap contact-grid"><div><h2>What to expect</h2><p>A focused discussion of your strategic priorities, operating constraints, existing initiatives and evidence requirements.</p><div class="card"><h3>Common starting points</h3><p class="muted">AI strategy and use-case prioritization · Business-model redesign · Pilot definition · Executive education · Workforce transformation · Governance.</p></div><p><strong>Email:</strong> <a class="card-cta" href="mailto:info@trouvus.com">info@trouvus.com</a><br><strong>Phone:</strong> <a class="card-cta" href="tel:+14165785353">+1 (416) 578-5353</a></p><p class="small muted">During this private preview, the form opens a prepared message in your email application. A CRM-backed endpoint will replace it before public launch.</p></div><form data-contact-form><div class="form-row"><label for="first-name">First name <span class="required" aria-hidden="true">*</span><input id="first-name" required autocomplete="given-name" name="first_name"></label><label for="last-name">Last name <span class="required" aria-hidden="true">*</span><input id="last-name" required autocomplete="family-name" name="last_name"></label></div><label for="work-email">Work email <span class="required" aria-hidden="true">*</span><input id="work-email" required type="email" autocomplete="email" name="email"></label><label for="organization">Organization<input id="organization" autocomplete="organization" name="organization"></label><label for="role">Role<input id="role" autocomplete="organization-title" name="role"></label><label for="challenge">Primary transformation challenge<select id="challenge" name="challenge"><option>AI strategy and roadmap</option><option>Business-model innovation</option><option>Implementation or pilot</option><option>Workforce transformation</option><option>Executive education</option><option>AI venture advisory</option><option>Other</option></select></label><label for="message">What decision or outcome are you working toward? <span class="required" aria-hidden="true">*</span><textarea id="message" required name="message"></textarea></label><button class="btn accent" type="submit">Prepare consultation request</button><p class="form-status" data-form-status aria-live="polite"></p><p class="small muted">Required fields are marked with an asterisk. Your information is not stored by this preview website.</p></form></div></section>
+<BaseLayout title="Executive AI Value Diagnostic | Trouvus" description="Request a focused 90-minute working session to map an AI opportunity, screen readiness and risk, and define a governed next step.">
+  <section class="page-hero">
+    <canvas class="hero-canvas" data-variant="pipeline"></canvas>
+    <div class="wrap">
+      <div class="eyebrow">Executive AI Value Diagnostic</div>
+      <h1>Turn strategic uncertainty into a governed next decision.</h1>
+      <p class="lead">A focused 90-minute working session to clarify where AI could create value, expose the constraints that matter and identify the most credible next step.</p>
+    </div>
+  </section>
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">What you receive</div>
+        <h2>A decision-quality starting point.</h2>
+        <p>The diagnostic is designed for leaders with a consequential opportunity, unresolved uncertainty or an initiative that needs a sharper strategic frame.</p>
+        <div class="diagnostic-outputs contact-outputs" aria-label="Diagnostic outputs">
+          <div><span>01</span><strong>Preliminary strategic-opportunity map</strong></div>
+          <div><span>02</span><strong>Readiness and risk screen</strong></div>
+          <div><span>03</span><strong>One recommended scale-or-stop next step</strong></div>
+        </div>
+        <div class="card contact-note">
+          <h3>A working session—not a sales presentation</h3>
+          <p class="muted">We start with your decision, value logic and operating context. Technology choices follow only when they are relevant.</p>
+        </div>
+        <p><strong>Email:</strong> <a class="card-cta" href="mailto:info@trouvus.com">info@trouvus.com</a><br><strong>Phone:</strong> <a class="card-cta" href="tel:+14165785353">+1 (416) 578-5353</a></p>
+        <p class="small muted">During this preview, the form opens a prepared message in your email application. A consent-aware form endpoint will replace it before production launch.</p>
+      </div>
+      <form data-contact-form>
+        <div class="form-intro"><span>Request the diagnostic</span><strong>Tell us what you are trying to decide.</strong></div>
+        <div class="form-row">
+          <label for="first-name">First name <span class="required" aria-hidden="true">*</span><input id="first-name" required autocomplete="given-name" name="first_name"></label>
+          <label for="last-name">Last name <span class="required" aria-hidden="true">*</span><input id="last-name" required autocomplete="family-name" name="last_name"></label>
+        </div>
+        <label for="work-email">Work email <span class="required" aria-hidden="true">*</span><input id="work-email" required type="email" autocomplete="email" name="email"></label>
+        <label for="organization">Organization<input id="organization" autocomplete="organization" name="organization"></label>
+        <label for="role">Role<input id="role" autocomplete="organization-title" name="role"></label>
+        <label for="challenge">Primary starting point<select id="challenge" name="challenge"><option>Executive AI Value Diagnostic</option><option>AI strategy and roadmap</option><option>Business-model innovation</option><option>Implementation or pilot</option><option>Workforce transformation</option><option>Executive education</option><option>AI venture advisory</option><option>Other</option></select></label>
+        <label for="message">What decision or outcome are you working toward? <span class="required" aria-hidden="true">*</span><textarea id="message" required name="message"></textarea></label>
+        <button class="btn accent" type="submit">Prepare diagnostic request</button>
+        <p class="form-status" data-form-status aria-live="polite"></p>
+        <p class="small muted">Required fields are marked with an asterisk. Your information is not stored by this preview website.</p>
+      </form>
+    </div>
+  </section>
 </BaseLayout>

@@ -20,7 +20,7 @@ const isActive = (href: string) => path === href || (href !== '/' && path.starts
         {items.map(([href, label]) => (
           <a href={href} aria-current={isActive(href) ? 'page' : undefined}>{label}</a>
         ))}
-        <a class="btn accent" href="/contact/" aria-current={path === '/contact/' ? 'page' : undefined}>Book a consultation</a>
+        <a class="btn accent" href="/contact/?interest=diagnostic" aria-current={path === '/contact/' ? 'page' : undefined}>Request a diagnostic</a>
       </div>
       <button class="menu btn secondary" type="button" aria-expanded="false" aria-controls="primary-menu" data-menu-button>
         <span>Menu</span>

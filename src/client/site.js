@@ -201,6 +201,7 @@
   if (contactForm) {
     const interest = new URLSearchParams(window.location.search).get('interest');
     const interestMap = {
+      diagnostic: 'Executive AI Value Diagnostic',
       briefing: 'AI strategy and roadmap',
       education: 'Executive education',
       speaking: 'Other',
@@ -212,7 +213,7 @@
       const status = contactForm.querySelector('[data-form-status]');
       if (!contactForm.reportValidity()) return;
       const data = new FormData(contactForm);
-      const subject = encodeURIComponent(`Trouvus consultation request — ${data.get('organization') || `${data.get('first_name')} ${data.get('last_name')}`}`);
+      const subject = encodeURIComponent(`Trouvus Executive AI Value Diagnostic request — ${data.get('organization') || `${data.get('first_name')} ${data.get('last_name')}`}`);
       const body = encodeURIComponent([
         `Name: ${data.get('first_name')} ${data.get('last_name')}`,
         `Work email: ${data.get('email')}`,
@@ -222,7 +223,7 @@
         '',
         String(data.get('message') || ''),
       ].join('\n'));
-      status.textContent = 'Opening your email application with a prepared consultation request…';
+      status.textContent = 'Opening your email application with a prepared diagnostic request…';
       status.className = 'form-status success';
       window.location.href = `mailto:info@trouvus.com?subject=${subject}&body=${body}`;
     });

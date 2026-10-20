@@ -60,7 +60,7 @@ Vercel detects Astro automatically. For a confidential review deployment:
 2. Keep `PUBLIC_SITE_ENV` unset or set it to `preview`.
 3. In Vercel **Project settings → Deployment Protection**, enable **Vercel Authentication** for preview deployments.
 4. Invite reviewers or create a shareable protected link.
-5. Do not promote to the production domain until the form endpoint, final legal text, approved client evidence and analytics consent model are ready.
+5. Do not promote to the production domain until the form endpoint, final legal text, approved credential references and analytics consent model are ready.
 
 `vercel.json` supplies legacy-route redirects, security headers and static asset caching.
 
@@ -69,7 +69,7 @@ Vercel detects Astro automatically. For a confidential review deployment:
 - Replace the preview `mailto:` consultation flow with a consent-aware CRM/form endpoint.
 - Have counsel approve Privacy and Terms.
 - Add analytics only after choosing a privacy and consent model.
-- Publish prior-client evidence only with documented attribution and permission.
+- Publish any historical engagement evidence only with documented attribution and permission.
 - Re-run accessibility, responsive visual and performance audits before production promotion.
 
 ## Brand system
