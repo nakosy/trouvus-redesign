@@ -27,9 +27,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="muted">We start with your decision, value logic and operating context. Technology choices follow only when they are relevant.</p>
         </div>
         <p><strong>Email:</strong> <a class="card-cta" href="mailto:info@trouvus.com">info@trouvus.com</a><br><strong>Phone:</strong> <a class="card-cta" href="tel:+14165785353">+1 (416) 578-5353</a></p>
-        <p class="small muted">During this preview, the form opens a prepared message in your email application. A consent-aware form endpoint will replace it before production launch.</p>
+        <p class="small muted">Your request is sent securely to the Trouvus team. We typically reply within two business days.</p>
       </div>
-      <form data-contact-form>
+      <form name="executive-ai-value-diagnostic" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="company_website" data-contact-form>
+        <input type="hidden" name="form-name" value="executive-ai-value-diagnostic">
+        <p class="honeypot" aria-hidden="true"><label>Do not complete this field<input name="company_website" tabindex="-1" autocomplete="off"></label></p>
         <div class="form-intro"><span>Request the diagnostic</span><strong>Tell us what you are trying to decide.</strong></div>
         <div class="form-row">
           <label for="first-name">First name <span class="required" aria-hidden="true">*</span><input id="first-name" required autocomplete="given-name" name="first_name"></label>
@@ -40,9 +42,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <label for="role">Role<input id="role" autocomplete="organization-title" name="role"></label>
         <label for="challenge">Primary starting point<select id="challenge" name="challenge"><option>Executive AI Value Diagnostic</option><option>AI strategy and roadmap</option><option>Business-model innovation</option><option>Implementation or pilot</option><option>Workforce transformation</option><option>Executive education</option><option>AI venture advisory</option><option>Other</option></select></label>
         <label for="message">What decision or outcome are you working toward? <span class="required" aria-hidden="true">*</span><textarea id="message" required name="message"></textarea></label>
-        <button class="btn accent" type="submit">Prepare diagnostic request</button>
+        <button class="btn accent" type="submit">Request the diagnostic</button>
         <p class="form-status" data-form-status aria-live="polite"></p>
-        <p class="small muted">Required fields are marked with an asterisk. Your information is not stored by this preview website.</p>
+        <p class="small muted">Required fields are marked with an asterisk. We use the information you provide only to respond to your request, as explained in our <a href="/privacy/">Privacy Policy</a>.</p>
       </form>
     </div>
   </section>

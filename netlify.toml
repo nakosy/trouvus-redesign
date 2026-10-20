@@ -1,0 +1,233 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+[context.production.environment]
+  PUBLIC_SITE_ENV = "production"
+
+[context.deploy-preview.environment]
+  PUBLIC_SITE_ENV = "preview"
+
+[context.branch-deploy.environment]
+  PUBLIC_SITE_ENV = "preview"
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/expertise.html"
+  to = "/expertise/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/approach.html"
+  to = "/approach/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/results.html"
+  to = "/perspectives/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/perspectives.html"
+  to = "/perspectives/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights.html"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insight-why-ai-strategies-fail.html"
+  to = "/insights/why-ai-strategies-fail/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insight-transformation-portfolio.html"
+  to = "/insights/transformation-portfolio/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insight-cognitive-offloading.html"
+  to = "/insights/cognitive-offloading/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insight-beyond-cost-reduction.html"
+  to = "/insights/beyond-cost-reduction/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insight-habmc.html"
+  to = "/insights/human-augmented-business-model-canvas/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insight-strategy-to-scale.html"
+  to = "/insights/strategy-to-scale/"
+  status = 301
+  force = true
+
+# Public Wix URL migration map captured on 2026-10-20.
+[[redirects]]
+  from = "/service-page/book-a-free-consultation"
+  to = "/contact/?interest=diagnostic"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/generative-ai-the-silent-revolution-transforming-business-landscapes"
+  to = "/insights/beyond-cost-reduction/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/your-success-is-our-mission-partner-with-trouvus"
+  to = "/contact/?interest=diagnostic"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/unlocking-your-digital-potential-with-trouvus"
+  to = "/expertise/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/post/embracing-the-future-how-ai-automation-are-revolutionizing-businesses"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/product-page/resource-card-title-will-be-here"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/category/all-products"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources-1/title-of-the-resource"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/expertise/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/startup-solutions"
+  to = "/expertise/#venture"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources-1"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources"
+  to = "/insights/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/copy-of-cloud-based-technologies-for"
+  to = "/expertise/#implementation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/book-online"
+  to = "/contact/?interest=diagnostic"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/copy-of-scalable-solutions-for-startups"
+  to = "/expertise/#venture"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/digital-transformation-for-startups"
+  to = "/expertise/#venture"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/copy-of-agile-ai-development-for-star"
+  to = "/expertise/#implementation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/perspectives/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/our-approach"
+  to = "/approach/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/copy-of-digital-transformation-for-st"
+  to = "/expertise/#venture"
+  status = 301
+  force = true

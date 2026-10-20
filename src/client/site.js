@@ -208,11 +208,35 @@
     };
     const challengeSelect = contactForm.querySelector('[name="challenge"]');
     if (interest && interestMap[interest] && challengeSelect) challengeSelect.value = interestMap[interest];
-    contactForm.addEventListener('submit', (event) => {
+    contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const status = contactForm.querySelector('[data-form-status]');
       if (!contactForm.reportValidity()) return;
       const data = new FormData(contactForm);
+      const productionHost = ['trouvus.com', 'www.trouvus.com'].includes(window.location.hostname) || window.location.hostname.endsWith('.netlify.app');
+
+      if (productionHost) {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        if (submitButton) submitButton.disabled = true;
+        status.textContent = 'Submitting your diagnostic request…';
+        status.className = 'form-status';
+        try {
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams([...data.entries()]).toString(),
+          });
+          if (!response.ok) throw new Error(`Submission failed with status ${response.status}`);
+          window.location.assign(contactForm.action);
+          return;
+        } catch (error) {
+          status.textContent = 'The secure form could not be submitted. Please email info@trouvus.com instead.';
+          status.className = 'form-status error';
+          if (submitButton) submitButton.disabled = false;
+          return;
+        }
+      }
+
       const subject = encodeURIComponent(`Trouvus Executive AI Value Diagnostic request — ${data.get('organization') || `${data.get('first_name')} ${data.get('last_name')}`}`);
       const body = encodeURIComponent([
         `Name: ${data.get('first_name')} ${data.get('last_name')}`,

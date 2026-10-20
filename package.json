@@ -8,6 +8,8 @@
     "dev": "npm run build:client && ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build:client": "node scripts/build-client.mjs",
     "build": "npm run build:client && ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/build-sites-entry.mjs",
+    "build:netlify": "npm run build:client && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "test:netlify": "npm run check && PUBLIC_SITE_ENV=production npm run build:netlify && CHECK_TARGET=netlify npm run check:links",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "check:links": "node scripts/check-dist.mjs"

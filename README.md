@@ -17,6 +17,14 @@ Production verification:
 npm test
 ```
 
+Netlify production verification:
+
+```bash
+npm run test:netlify
+```
+
+Netlify uses `netlify.toml` with `npm run build:netlify`, publishes `dist/`, creates deploy previews for pull requests, and sets `PUBLIC_SITE_ENV=production` only for the production context. See `docs/NETLIFY-MIGRATION.md` for the cutover and DNS-preservation plan.
+
 This runs Astro type checking, a static production build, and an internal-link/metadata audit. Use `npm run preview` to review the production build locally.
 
 ## Site structure

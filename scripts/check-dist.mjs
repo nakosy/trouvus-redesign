@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, extname, join, normalize, relative, resolve } from 'node:path';
 
 const root = resolve('dist');
+const target = process.env.CHECK_TARGET ?? 'sites';
 if (!existsSync(root)) {
   console.error('dist/ does not exist. Run npm run build first.');
   process.exit(1);
@@ -39,18 +40,31 @@ else if (!/<sitemapindex\b/i.test(readFileSync(sitemapAliasPath, 'utf8'))) {
   failures.push('sitemap.xml: expected a sitemap index');
 }
 
-const workerPath = join(root, 'server', 'index.js');
-if (!existsSync(workerPath)) failures.push('server/index.js: missing Sites worker');
-else {
-  const worker = readFileSync(workerPath, 'utf8');
-  if (!worker.includes('Content-Security-Policy')) failures.push('server/index.js: missing security headers');
-  if (!worker.includes('X-Robots-Tag')) failures.push('server/index.js: missing 404 noindex header');
-}
+if (target === 'netlify') {
+  const staticHeadersPath = join(root, '_headers');
+  if (!existsSync(staticHeadersPath)) failures.push('_headers: missing Netlify static security policy');
+  else if (!readFileSync(staticHeadersPath, 'utf8').includes('Content-Security-Policy')) {
+    failures.push('_headers: missing content security policy');
+  }
+  const contactPath = join(root, 'contact', 'index.html');
+  if (!existsSync(contactPath) || !readFileSync(contactPath, 'utf8').includes('data-netlify="true"')) {
+    failures.push('contact/index.html: missing Netlify form declaration');
+  }
+  if (!existsSync(resolve('netlify.toml'))) failures.push('netlify.toml: missing deployment configuration');
+} else {
+  const workerPath = join(root, 'server', 'index.js');
+  if (!existsSync(workerPath)) failures.push('server/index.js: missing Sites worker');
+  else {
+    const worker = readFileSync(workerPath, 'utf8');
+    if (!worker.includes('Content-Security-Policy')) failures.push('server/index.js: missing security headers');
+    if (!worker.includes('X-Robots-Tag')) failures.push('server/index.js: missing 404 noindex header');
+  }
 
-const staticHeadersPath = join(root, 'client', '_headers');
-if (!existsSync(staticHeadersPath)) failures.push('client/_headers: missing static-host security policy');
-else if (!readFileSync(staticHeadersPath, 'utf8').includes('Content-Security-Policy')) {
-  failures.push('client/_headers: missing content security policy');
+  const staticHeadersPath = join(root, 'client', '_headers');
+  if (!existsSync(staticHeadersPath)) failures.push('client/_headers: missing static-host security policy');
+  else if (!readFileSync(staticHeadersPath, 'utf8').includes('Content-Security-Policy')) {
+    failures.push('client/_headers: missing content security policy');
+  }
 }
 
 const resolveTarget = (fromFile, rawReference) => {
