@@ -1,0 +1,19 @@
+---
+interface Props { id: string; icon: string; number: string; title: string; lead: string; mandates: string; deliverables: string; }
+const { id, icon, number, title, lead, mandates, deliverables } = Astro.props;
+---
+
+<div id={id} class="service-row">
+  <div>
+    <img class="icon" src={`/images/${icon}.svg`} loading="lazy" decoding="async" alt="" />
+    <div class="eyebrow">Practice {number}</div>
+    <h2>{title}</h2>
+  </div>
+  <div>
+    <p class="lead">{lead}</p>
+    <h3>Typical mandates</h3>
+    <p>{mandates}</p>
+    <h3>Core deliverables</h3>
+    <p>{deliverables}</p>
+  </div>
+</div>

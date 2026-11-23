@@ -1,11 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
+import Card from '../components/Card.astro';
+import StatCard from '../components/StatCard.astro';
+import Stepper from '../components/Stepper.astro';
+import Pipeline from '../components/Pipeline.astro';
+
+const mckinsey = 'https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai';
+const kicker = 'McKinsey Global Survey · August 2026';
+const stats = [
+  { value: '80%', text: 'of respondents say AI has improved their individual productivity.', cta: 'Read the 2026 survey →' },
+  { value: '37%', text: 'report that AI has contributed positively to their organization’s EBIT.', cta: 'See the enterprise-impact findings →' },
+  { value: '6%', text: 'qualify as AI high performers, reporting significant value and at least 5% EBIT impact from AI.', cta: 'Review what high performers do differently →' },
+];
+const gaps = [
+  { icon: 'icon-strategy', title: 'Disconnected strategy', text: 'Tools deployed without clear business-model integration.' },
+  { icon: 'icon-bizmodel', title: 'Unchanged workflows', text: 'Automation layered over outdated operating processes.' },
+  { icon: 'icon-workforce', title: 'Atrophied capability', text: 'Workforce skills replaced rather than augmented.' },
+];
+const steps = [
+  { label: '01 Decide', title: 'Decide where AI creates defensible value', text: 'Identify the opportunities that matter, prioritize them against value, feasibility, risk and readiness, and build a credible transformation roadmap.', href: '/expertise/#strategy', cta: 'AI strategy and roadmaps →', icon: 'icon-strategy' },
+  { label: '02 Design & deploy', title: 'Redesign the work, then deploy', text: 'Redesign business models, decisions and workflows; define bounded pilots; govern implementation against measurable outcomes.', href: '/expertise/#implementation', cta: 'Implementation and pilots →', icon: 'icon-implementation' },
+  { label: '03 Adopt & scale', title: 'Build the organization that scales it', text: 'Develop leadership alignment, workforce capability, governance and the operating disciplines required to scale beyond the pilot.', href: '/expertise/#workforce', cta: 'Workforce transformation →', icon: 'icon-workforce' },
+];
+const principles = [
+  { icon: 'icon-strategy', title: 'Start with strategic value', text: 'Technology selection follows opportunity prioritization, operating logic and evidence.' },
+  { icon: 'icon-bizmodel', title: 'Redesign work', text: 'AI should improve decisions, workflows and value creation—not merely accelerate isolated tasks.' },
+  { icon: 'icon-workforce', title: 'Build capability', text: 'Every pilot should strengthen leadership judgment, workforce competence and institutional learning.' },
+  { icon: 'icon-implementation', title: 'Measure outcomes', text: 'Success is assessed through operating, strategic and organizational results rather than activity.' },
+];
+const stages = [
+  { icon: 'stage-diagnose', title: 'Diagnose', tip: 'Uncover true capability constraints across data, technology and governance.' },
+  { icon: 'stage-prioritize', title: 'Prioritize', tip: 'Convert fragmented use-case lists into a ranked, governed portfolio.' },
+  { icon: 'stage-design', title: 'Design', tip: 'Define workflows, decision rights and human-augmented boundaries.' },
+  { icon: 'stage-pilot', title: 'Pilot', tip: 'Run bounded tests with strict scale-or-stop decision rules.' },
+  { icon: 'stage-scale', title: 'Scale', tip: 'Institutionalize processes, controls and continuous workforce learning.' },
+];
+const assets = [
+  { src: '/images/readiness-diagnostic.svg', alt: 'AI Transformation Readiness Diagnostic', title: 'AI Transformation Readiness Diagnostic', text: 'Assesses strategic alignment, data, technology, governance and workforce capability.' },
+  { src: '/images/habmc.svg', alt: 'Human-Augmented Business Model Canvas', title: 'Human-Augmented Business Model Canvas', text: 'Examines how AI changes value creation while preserving critical human agency.' },
+  { src: '/images/strategy-to-scale.svg', alt: 'Strategy-to-Scale Framework', title: 'Pilot Passport', text: 'Defines a pilot’s hypothesis, scope, owners, controls, metrics and scale decision.' },
+];
+const proof = [
+  { tone: 'violet', badge: 'Inspectable evidence', title: 'Built on published research', text: 'Ideas are grounded in peer-reviewed work and established business-model frameworks—not vendor hype or unsupported certainty.' },
+  { tone: 'green', badge: 'Proprietary methods', title: 'Ideas converted into decision systems', text: 'Diagnostics, canvases and Pilot Passports turn abstract strategy into explicit choices, ownership and evidence requirements.' },
+  { tone: 'blue', badge: 'Enterprise-value lens', title: 'Technology evaluated through value', text: 'AI opportunities are examined against strategic relevance, operating feasibility, risk, readiness and capital discipline.' },
+  { tone: 'amber', badge: 'Governed experimentation', title: 'Scale-or-stop logic before build', text: 'Every pilot begins with a bounded hypothesis, accountable owners and a pre-committed decision rule.' },
+];
 ---
 
 <BaseLayout title="Trouvus | Research-Grounded AI Transformation" description="Trouvus helps leaders decide where AI creates value, redesign work around it and govern the path from hypothesis to scalable capability.">
   <section class="hero">
-    <canvas class="hero-canvas" data-variant="network"></canvas>
+    <canvas class="hero-canvas" data-variant="network" aria-hidden="true"></canvas>
     <div class="wrap hero-grid">
       <div>
         <div class="eyebrow">AI transformation strategy and implementation</div>
@@ -34,30 +80,11 @@ import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
       <div class="eyebrow">The 2026 enterprise reality</div>
       <h2>Individual AI gains are rising. Enterprise value still depends on operating redesign.</h2>
       <div class="stat-grid">
-        <div class="stat-card">
-          <div class="kicker">McKinsey Global Survey · August 2026</div>
-          <div class="stat-number">80%</div>
-          <p class="muted small">of respondents say AI has improved their individual productivity.</p>
-          <a class="source-link" href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener">Read the 2026 survey →</a>
-        </div>
-        <div class="stat-card">
-          <div class="kicker">McKinsey Global Survey · August 2026</div>
-          <div class="stat-number">37%</div>
-          <p class="muted small">report that AI has contributed positively to their organization’s EBIT.</p>
-          <a class="source-link" href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener">See the enterprise-impact findings →</a>
-        </div>
-        <div class="stat-card">
-          <div class="kicker">McKinsey Global Survey · August 2026</div>
-          <div class="stat-number">6%</div>
-          <p class="muted small">qualify as AI high performers, reporting significant value and at least 5% EBIT impact from AI.</p>
-          <a class="source-link" href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener">Review what high performers do differently →</a>
-        </div>
+        {stats.map((stat) => <StatCard {...stat} kicker={kicker} href={mckinsey} />)}
       </div>
-      <p class="small muted" style="margin-top:14px">Based on 1,719 survey participants across 97 nations; fielded May–June 2026.</p>
-      <div class="grid-3" style="margin-top:26px">
-        <div class="card"><img class="icon" src="/images/icon-strategy.svg" loading="lazy" decoding="async" alt=""><h3>Disconnected strategy</h3><p class="muted">Tools deployed without clear business-model integration.</p></div>
-        <div class="card"><img class="icon" src="/images/icon-bizmodel.svg" loading="lazy" decoding="async" alt=""><h3>Unchanged workflows</h3><p class="muted">Automation layered over outdated operating processes.</p></div>
-        <div class="card"><img class="icon" src="/images/icon-workforce.svg" loading="lazy" decoding="async" alt=""><h3>Atrophied capability</h3><p class="muted">Workforce skills replaced rather than augmented.</p></div>
+      <p class="small muted mt-sm">Based on 1,719 survey participants across 97 nations; fielded May–June 2026.</p>
+      <div class="grid-3 mt-md">
+        {gaps.map((gap) => <Card {...gap} />)}
       </div>
     </div>
   </section>
@@ -66,16 +93,7 @@ import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
     <div class="wrap">
       <div class="eyebrow">The transformation journey</div>
       <h2>Three moves. One operating system.</h2>
-      <div class="stepper">
-        <div class="stepper-tabs">
-          <button class="stepper-tab active" data-tab="1">01 Decide</button>
-          <button class="stepper-tab" data-tab="2">02 Design &amp; deploy</button>
-          <button class="stepper-tab" data-tab="3">03 Adopt &amp; scale</button>
-        </div>
-        <div class="stepper-panel active" data-panel="1"><div><h3>Decide where AI creates defensible value</h3><p class="muted">Identify the opportunities that matter, prioritize them against value, feasibility, risk and readiness, and build a credible transformation roadmap.</p><a class="card-cta" href="/expertise/#strategy">AI strategy and roadmaps →</a></div><img src="/images/icon-strategy.svg" loading="lazy" decoding="async" alt="" width="110" height="110"></div>
-        <div class="stepper-panel" data-panel="2"><div><h3>Redesign the work, then deploy</h3><p class="muted">Redesign business models, decisions and workflows; define bounded pilots; govern implementation against measurable outcomes.</p><a class="card-cta" href="/expertise/#implementation">Implementation and pilots →</a></div><img src="/images/icon-implementation.svg" loading="lazy" decoding="async" alt="" width="110" height="110"></div>
-        <div class="stepper-panel" data-panel="3"><div><h3>Build the organization that scales it</h3><p class="muted">Develop leadership alignment, workforce capability, governance and the operating disciplines required to scale beyond the pilot.</p><a class="card-cta" href="/expertise/#workforce">Workforce transformation →</a></div><img src="/images/icon-workforce.svg" loading="lazy" decoding="async" alt="" width="110" height="110"></div>
-      </div>
+      <Stepper steps={steps} />
     </div>
   </section>
 
@@ -87,10 +105,7 @@ import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
         <img class="pov-visual" src="/images/pov-steps.svg" loading="lazy" decoding="async" alt="Four moves: strategic value, redesign work, build capability, measure outcomes" width="620" height="190">
       </div>
       <div class="grid-2">
-        <div class="card"><img class="icon" src="/images/icon-strategy.svg" loading="lazy" decoding="async" alt=""><h3>Start with strategic value</h3><p class="muted">Technology selection follows opportunity prioritization, operating logic and evidence.</p></div>
-        <div class="card"><img class="icon" src="/images/icon-bizmodel.svg" loading="lazy" decoding="async" alt=""><h3>Redesign work</h3><p class="muted">AI should improve decisions, workflows and value creation—not merely accelerate isolated tasks.</p></div>
-        <div class="card"><img class="icon" src="/images/icon-workforce.svg" loading="lazy" decoding="async" alt=""><h3>Build capability</h3><p class="muted">Every pilot should strengthen leadership judgment, workforce competence and institutional learning.</p></div>
-        <div class="card"><img class="icon" src="/images/icon-implementation.svg" loading="lazy" decoding="async" alt=""><h3>Measure outcomes</h3><p class="muted">Success is assessed through operating, strategic and organizational results rather than activity.</p></div>
+        {principles.map((item) => <Card {...item} />)}
       </div>
     </div>
   </section>
@@ -99,14 +114,8 @@ import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
     <div class="wrap">
       <div class="eyebrow">Strategy-to-Scale Framework</div>
       <h2>From strategic uncertainty to scalable capability.</h2>
-      <div class="pipeline">
-        <div class="pipe-node" tabindex="0"><span class="tip">Uncover true capability constraints across data, technology and governance.</span><img class="stage-icon" src="/images/stage-diagnose.svg" loading="lazy" decoding="async" alt=""><div class="num">01</div><h3>Diagnose</h3></div>
-        <div class="pipe-node" tabindex="0"><span class="tip">Convert fragmented use-case lists into a ranked, governed portfolio.</span><img class="stage-icon" src="/images/stage-prioritize.svg" loading="lazy" decoding="async" alt=""><div class="num">02</div><h3>Prioritize</h3></div>
-        <div class="pipe-node" tabindex="0"><span class="tip">Define workflows, decision rights and human-augmented boundaries.</span><img class="stage-icon" src="/images/stage-design.svg" loading="lazy" decoding="async" alt=""><div class="num">03</div><h3>Design</h3></div>
-        <div class="pipe-node" tabindex="0"><span class="tip">Run bounded tests with strict scale-or-stop decision rules.</span><img class="stage-icon" src="/images/stage-pilot.svg" loading="lazy" decoding="async" alt=""><div class="num">04</div><h3>Pilot</h3></div>
-        <div class="pipe-node" tabindex="0"><span class="tip">Institutionalize processes, controls and continuous workforce learning.</span><img class="stage-icon" src="/images/stage-scale.svg" loading="lazy" decoding="async" alt=""><div class="num">05</div><h3>Scale</h3></div>
-      </div>
-      <p class="small muted" style="margin-top:14px">Hover or focus each stage for its executive output. <a href="/approach/" class="card-cta">Full framework →</a></p>
+      <Pipeline stages={stages} />
+      <p class="small muted mt-sm">Hover or focus each stage for its executive output. <a href="/approach/" class="card-cta">Full framework →</a></p>
     </div>
   </section>
 
@@ -115,9 +124,7 @@ import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
       <div class="eyebrow">Intellectual assets</div>
       <h2>Frameworks that make transformation decisions visible.</h2>
       <div class="grid-3">
-        <div class="card tactile glass"><img src="/images/readiness-diagnostic.svg" loading="lazy" decoding="async" alt="AI Transformation Readiness Diagnostic" width="640" height="300"><h3>AI Transformation Readiness Diagnostic</h3><p>Assesses strategic alignment, data, technology, governance and workforce capability.</p></div>
-        <div class="card tactile glass"><img src="/images/habmc.svg" loading="lazy" decoding="async" alt="Human-Augmented Business Model Canvas" width="640" height="300"><h3>Human-Augmented Business Model Canvas</h3><p>Examines how AI changes value creation while preserving critical human agency.</p></div>
-        <div class="card tactile glass"><img src="/images/strategy-to-scale.svg" loading="lazy" decoding="async" alt="Strategy-to-Scale Framework" width="640" height="300"><h3>Pilot Passport</h3><p>Defines a pilot’s hypothesis, scope, owners, controls, metrics and scale decision.</p></div>
+        {assets.map((asset) => <Card class="tactile glass" muted={false} title={asset.title} text={asset.text} image={{ src: asset.src, alt: asset.alt }} />)}
       </div>
     </div>
   </section>
@@ -131,10 +138,7 @@ import OperatingSystemVisual from '../components/OperatingSystemVisual.astro';
         <img class="control-center-visual" src="/images/control-center.svg" loading="lazy" decoding="async" alt="Trouvus transformation diagnostic: five-dimension readiness radar and governed portfolio view" width="640" height="460">
       </div>
       <div class="authority-cards">
-        <div class="card proof"><div class="badge violet">Inspectable evidence</div><h3>Built on published research</h3><p class="muted">Ideas are grounded in peer-reviewed work and established business-model frameworks—not vendor hype or unsupported certainty.</p></div>
-        <div class="card proof"><div class="badge green">Proprietary methods</div><h3>Ideas converted into decision systems</h3><p class="muted">Diagnostics, canvases and Pilot Passports turn abstract strategy into explicit choices, ownership and evidence requirements.</p></div>
-        <div class="card proof"><div class="badge blue">Enterprise-value lens</div><h3>Technology evaluated through value</h3><p class="muted">AI opportunities are examined against strategic relevance, operating feasibility, risk, readiness and capital discipline.</p></div>
-        <div class="card proof"><div class="badge amber">Governed experimentation</div><h3>Scale-or-stop logic before build</h3><p class="muted">Every pilot begins with a bounded hypothesis, accountable owners and a pre-committed decision rule.</p></div>
+        {proof.map((item) => <Card class="proof" {...item} />)}
       </div>
     </div>
   </section>

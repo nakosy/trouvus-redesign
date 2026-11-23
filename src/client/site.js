@@ -67,6 +67,8 @@
         select(next, true);
       });
     });
+    const tablist = stepper.querySelector('.stepper-tabs');
+    if (tablist) tablist.hidden = false;
     select(0);
   });
 

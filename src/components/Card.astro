@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  icon?: string;
+  image?: { src: string; alt: string };
+  badge?: string;
+  tone?: 'violet' | 'green' | 'blue' | 'amber';
+  as?: 'div' | 'article';
+  heading?: 'h2' | 'h3';
+  class?: string;
+  muted?: boolean;
+}
+const { title, text, icon, image, badge, tone = 'violet', as: Tag = 'div', heading: Heading = 'h3', class: extra, muted = true } = Astro.props;
+---
+
+<Tag class:list={['card', extra]}>
+  {icon && <img class="icon" src={`/images/${icon}.svg`} loading="lazy" decoding="async" alt="" />}
+  {image && <img src={image.src} loading="lazy" decoding="async" alt={image.alt} width="640" height="300" />}
+  {badge && <div class={`badge ${tone}`}>{badge}</div>}
+  <Heading>{title}</Heading>
+  <p class={muted ? 'muted' : undefined} set:html={text} />
+  <slot />
+</Tag>

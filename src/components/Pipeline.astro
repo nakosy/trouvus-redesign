@@ -1,0 +1,16 @@
+---
+interface Stage { title: string; tip: string; icon: string; }
+interface Props { stages: Stage[]; }
+const { stages } = Astro.props;
+---
+
+<div class="pipeline">
+  {stages.map((stage, i) => (
+    <div class="pipe-node" tabindex="0">
+      <span class="tip">{stage.tip}</span>
+      <img class="stage-icon" src={`/images/${stage.icon}.svg`} loading="lazy" decoding="async" alt="" />
+      <div class="num">{String(i + 1).padStart(2, '0')}</div>
+      <h3>{stage.title}</h3>
+    </div>
+  ))}
+</div>
